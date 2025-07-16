@@ -1,3 +1,9 @@
+---
+layout: post
+title: La hiérarchie opérationnelle des métiers de la cyber
+tags: [cyber]
+---
+
 Ces dernières années, la cybersécurité s’est fragmentée en une multitude de métiers. Les rôles se sont spécialisés, les postes se sont normalisés, chacun a obtenu un titre, une fiche de poste, et une place bien définie dans la grande machine cyber. Résultat : on a construit un écosystème dense et structuré … mais parfois compliqué à comprendre. Même de l’intérieur.
 
 Je propose ci-dessous un modèle hiérarchique des métiers de la cyber, non pas en termes de statut ou d’importance, mais en terme de proximité avec les opérations. Le point de départ est simple, il n'y a qu'un seul acteur libre dans l'écosystème : c'est l'attaquant. C'est lui qui justifie tout le reste de la chaîne. Sans attaque, il n'y a pas d'industrie de la cyber.
