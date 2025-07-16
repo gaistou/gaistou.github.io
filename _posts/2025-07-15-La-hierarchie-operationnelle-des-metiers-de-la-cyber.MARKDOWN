@@ -23,7 +23,7 @@ Ce niveau regroupe tous les rôles qui gravitent autour de la sécurité sans ja
 
 Ces fonctions ont une utilité organisationnelle, mais dans une lecture opérationnelle, elles restent déconnectées de l’action. Ce sont des fonctions de support, qui existent pour justifier ce que d’autres font sur le terrain. Elles ont le rôle de faire le lien entre le cyberespace et "la vraie vie" faite de budgets, de lois, de contrats, et d'enjeux politiques.
 
-La CTI dite 'stratégique' peut aussi être rangée ici, lorsqu’elle produit un renseignement pensé uniquement pour alimenter la gouvernance, sans lien direct avec les opérations techniques ou la réponse aux incidents.
+La CTI dite 'stratégique' peut aussi être rangée ici, lorsqu’elle produit un renseignement pensé uniquement pour alimenter la gouvernance, sans lien direct avec la détection ou la réponse aux incidents.
 
 
 
@@ -42,13 +42,13 @@ Les acteurs de ce niveau restent structurellement passifs : ils agissent avant, 
 
 **Exemples :** analystes SOC, ingénieurs détection, équipes EDR/XDR, CTI tactique, threat hunting, ingénieurs SIEM, reverser (pour la CTI)
 
-Ce niveau regroupe tous ceux qui scrutent l’environnement pour repérer les signes d’une attaque. Ils filtrent le bruit, trient les signaux faibles, analysent des anomalies, investiguent des comportements suspects. Leur rôle est d’identifier ce qui pourrait être une compromission en cours.
+Ce niveau regroupe tous ceux qui scrutent l’environnement pour repérer les signes d’une attaque. Ils filtrent le bruit, trient les signaux faibles, analysent des anomalies, investiguent des comportements suspects.
 
 La détection a besoin de contexte et de direction, fournis par la CTI. Celle-ci permet de calibrer les règles de détection, d’enrichir les alertes, et de formuler des hypothèses de recherche. La CTI est en fait une fonction de soutien à la détection. Dès qu’elle sort de cette logique opérationnelle (pour produire des rapports de haut-niveau sans impact local), elle retombe au niveau -1.
 
-On retrouve également ici le threat hunting, qui est une approche proactive de la détection : ne pas partir d’alertes, mais d’hypothèses de compromission, souvent d'après CTI. La méthode est différente, mais l'objectif reste le même : la détection.
+On retrouve également ici le threat hunting, qui est une approche proactive de la détection : ne pas partir d’alertes, mais d’hypothèses de compromission, souvent d'après la CTI. La méthode est différente, mais l'objectif reste le même : la détection.
 
-Le niveau 1 marque le premier point de contact réel avec l’attaque, mais sans action directe sur le système ou sur l’adversaire. C’est la porte d'entrée du monde opérationnel : on observe, on signale, on transmet à ceux qui vont agir, mais on ne participe pas encore aux opérations elles-mêmes.
+Le niveau 1 marque le premier point de contact réel avec l’attaque, mais sans action directe sur le système ou sur l’adversaire. C’est la porte d'entrée du monde opérationnel : on observe, on signale, et on transmet à ceux qui vont agir, mais on ne participe pas encore aux opérations elles-mêmes.
 
 
 ## Niveau 2 : Réponse
