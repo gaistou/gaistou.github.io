@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 
+title: La hiérarchie opérationnelle des métiers de la cyber
 tags: [cyber]
 ---
-
 
 Ces dernières années, la cybersécurité s’est fragmentée en une multitude de métiers. Les rôles se sont spécialisés, les postes se sont normalisés, chacun a obtenu un titre, une fiche de poste, et une place bien définie dans la grande machine cyber. Résultat : on a construit un écosystème dense et structuré … mais parfois compliqué à comprendre. Même de l’intérieur.
 
