@@ -1,4 +1,3 @@
-
 Ces dernières années, la cybersécurité s’est fragmentée en une multitude de métiers. Les rôles se sont spécialisés, les postes se sont normalisés, chacun a obtenu un titre, une fiche de poste, et une place bien définie dans la grande machine cyber. Résultat : on a construit un écosystème dense et structuré … mais parfois compliqué à comprendre. Même de l’intérieur.
 
 Je propose ci-dessous un modèle hiérarchique des métiers de la cyber, non pas en termes de statut ou d’importance, mais en terme de proximité avec les opérations. Le point de départ est simple, il n'y a qu'un seul acteur libre dans l'écosystème : c'est l'attaquant. C'est lui qui justifie tout le reste de la chaîne. Sans attaque, il n'y a pas d'industrie de la cyber.
@@ -24,7 +23,7 @@ La CTI dite 'stratégique' peut aussi être rangée ici, lorsqu’elle produit u
 
 ## Niveau 0 : Prévention
 
-Exemples : administrateurs systèmes et réseaux, architectes sécurité, développeurs, équipes IAM, équipes DevSecOps, pentesters, auditeurs, RSSI techniques
+**Exemples :** administrateurs systèmes et réseaux, architectes sécurité, développeurs, équipes IAM, équipes DevSecOps, pentesters, auditeurs, RSSI techniques
 
 Ce niveau regroupe tous ceux qui construisent les infrastructures pour limiter les surfaces d’attaque. Ils mettent en place des pare-feux, segmentent les réseaux, gèrent les identités, sécurisent les chaînes CI/CD, appliquent les correctifs. Bref, ils construisent la forteresse.
 
@@ -35,7 +34,7 @@ Les acteurs de ce niveau restent structurellement passifs : ils agissent avant, 
 
 ## Niveau 1 : Détection
 
-Exemples : analystes SOC, ingénieurs détection, équipes EDR/XDR, CTI tactique, threat hunting, ingénieurs SIEM, reverser (pour la CTI)
+**Exemples :** analystes SOC, ingénieurs détection, équipes EDR/XDR, CTI tactique, threat hunting, ingénieurs SIEM, reverser (pour la CTI)
 
 Ce niveau regroupe tous ceux qui scrutent l’environnement pour repérer les signes d’une attaque. Ils filtrent le bruit, trient les signaux faibles, analysent des anomalies, investiguent des comportements suspects. Leur rôle est d’identifier ce qui pourrait être une compromission en cours.
 
@@ -49,7 +48,7 @@ Le niveau 1 marque le premier point de contact réel avec l’attaque, mais sans
 ## Niveau 2 : Réponse
 
 
-Exemples : équipes CERT/CSIRT, analyste forensic, incident handler, reverser (pour la réponse)
+**Exemples :** équipes CERT/CSIRT, analyste forensic, incident handler, reverser (pour la réponse)
 
 Ce niveau regroupe ceux qui interviennent directement sur l’attaque en cours. Ils manipulent les systèmes compromis, analysent les causes, mesurent l’impact, restaurent l’intégrité. Contrairement aux niveaux précédents, ils ne se contentent pas d’observer : ils agissent.
 
@@ -58,7 +57,7 @@ On est ici au cœur de l’opérationnel : c’est à ce stade seulement, qu’o
 
 ## Niveau 3 : Offensif réel
 
-Exemples : exploit developers offensifs, opérateur offensif, APT, hackeur
+**Exemples :** exploit developers offensifs, opérateur offensif, APT, hackeur
 
 Ce niveau regroupe ceux qui créent la menace. On ne parle pas ici des pentesters classiques, encadrés par un cahier des charges, on parle d’opérateurs qui agissent sur des systèmes réels sans autorisation. Ils n'ont pas de règle du jeu, c'est eux le jeu.
 
