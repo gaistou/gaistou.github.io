@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pourquoi votre SOC ne traite que des faux-positifs
+title: Pourquoi ton SOC ne traite que des faux-positifs
 tags: [cyber, detection]
 math: true
 ---
