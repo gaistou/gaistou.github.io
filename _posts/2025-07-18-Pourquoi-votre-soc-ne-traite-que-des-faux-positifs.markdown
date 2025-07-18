@@ -2,6 +2,7 @@
 layout: post
 title: Pourquoi votre SOC ne traite que des faux-positifs
 tags: [cyber, detection]
+math: true
 ---
 
 
@@ -43,16 +44,20 @@ Pour une démonstration mathématique rigoureuse je vous redirige vers cet artic
 
 Le paradoxe est nommé d'après la formule de Bayes, qui est au final la seule formule qui permette de penser rationnellement à tous les problèmes de tests de détection.
 
-\[
+$$
+\begin{equation}
 P(M \mid A) = \frac{P(A \mid M) \cdot P(M)}{P(A \mid M) \cdot P(M) + P(A \mid \neg M) \cdot P(\neg M)}
-\]
+\label{eq:bayes}
+\end{equation}
+$$
 
 Avec :
-- \( P(M \mid A) \) : la probabilité qu’il y ait vraiment une menace sachant qu’une alerte a été levée.
-- \( P(A \mid M) \) : la probabilité que le système déclenche une alerte s’il y a une menace (c’est la *sensibilité*).
-- \( P(A \mid \neg M) \) : la probabilité que le système déclenche une alerte alors qu’il n’y a pas de menace (c’est le *taux de faux positifs*).
-- \( P(M) \) : la prévalence réelle des menaces dans le système surveillé.
-- \( P(\neg M) = 1 - P(M) \) : la probabilité qu’il n’y ait pas de menace.
+
+- $$P(M \mid A)$$ : la probabilité qu’il y ait **vraiment une menace** sachant qu’une alerte a été levée.
+- $$P(A \mid M)$$ : la probabilité que le système **déclenche une alerte s’il y a une menace** (*sensibilité*).
+- $$P(A \mid \neg M)$$ : la probabilité que le système **déclenche une alerte alors qu’il n’y a pas de menace** (*taux de faux positifs*).
+- $$P(M)$$ : la fréquence réelle des menaces (*prévalence*).
+- $$P(\neg M) = 1 - P(M)$$ : la probabilité qu’il n’y ait **pas** de menace.
 
 Évidemment, c'est pas une formule qu'on peut facilement calculer dans sa tête tous les jours. Mais elle existe, et elle donne une réalité mathématique aux problèmes de détection. Et cette réalité elle est cinglante : ce n’est pas ton EDR, ni ton analyste, ni ta règle YARA qui sont “nuls”... c’est juste que dans un monde où la prévalence de la malveillance dans les données est faible, la proba d’avoir une vraie alerte est mathématiquement faible aussi, même si tout fonctionne bien.
 
@@ -61,46 +66,41 @@ Avec :
 Alors, à quel point la formule de Bayes fait mal à mon SOC ? Prenons un exemple pour s'en faire une idée.
 
 - Je cherche à détecter un événement malveillant dans mes logs.
-- On ne peut pas le savoir à l'avance dans la vraie vie, mais supposons que 1 événement sur 1 million est malveillant dans mes données. Autrement dit :  
-  \[
-  P(M) = \frac{1}{1\,000\,000} = 0.000001
-  \]
-- Supposons que j'ai une règle de détection avec 99.99 % de sensibilité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000. Donc :  
-  \[
-  P(A \mid M) = 0.9999,\quad P(A \mid \neg M) = \frac{1}{10\,000} = 0.0001
-  \]
+- On ne peut pas le savoir à l'avance dans la vraie vie, mais supposons que 1 événement sur 1 million est malveillant dans mes données. 
+- Supposons que j'ai une règle de détection avec 99.99 % de sensibilité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000.
 
 Ma règle de détection vient de sonner. Quelle est la probabilité que ce soit une vraie alerte ? Posé autrement : quelle est la probabilité qu’il y ait réellement une menace, sachant qu’il y a une alerte ?
 
-On applique la formule de Bayes :
-
-\[
+$$
+\begin{equation}
 P(M \mid A) = \frac{P(A \mid M) \cdot P(M)}{P(A \mid M) \cdot P(M) + P(A \mid \neg M) \cdot P(\neg M)}
-\]
+\label{eq:bayes_alert}
+\end{equation}
+$$
 
 On remplace :
 
-\[
+$$
 P(M \mid A) = \frac{0.9999 \cdot 0.000001}{0.9999 \cdot 0.000001 + 0.0001 \cdot 0.999999}
-\]
+$$
 
 Calcul du numérateur :
 
-\[
+$$
 0.9999 \cdot 0.000001 = 0.0000009999
-\]
+$$
 
 Calcul du dénominateur :
 
-\[
+$$
 0.0000009999 + (0.0001 \cdot 0.999999) = 0.0000009999 + 0.0000999999 = 0.0001009998
-\]
+$$
 
-Donc :
+Résultat final :
 
-\[
+$$
 P(M \mid A) = \frac{0.0000009999}{0.0001009998} \approx 0.0099
-\]
+$$
 
 Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. C’est la réalité statistique, pas un bug de ton SIEM.
 
