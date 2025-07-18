@@ -40,7 +40,7 @@ Pas besoin de sortir les équations pour se convaincre. Deux cas extrêmes suffi
 - Si la prévalence est nulle (personne n'a le SIDA dans la population), alors tous les résultats positifs au test sont forcément faux. Tous les positifs sont des faux-positifs.
 - Si la prévalence est maximale (toute la population a le SIDA), alors le test ne peut faire aucun faux-positif, car tous les positifs sont forcément vrais. Tous les positifs sont des vrai-positifs.
 
-Pour une démonstration mathématique rigoureuse je vous redirige vers cet article très bien écrit ...
+Pour une démonstration mathématique rigoureuse je vous redirige vers cet article très bien écrit [todo]
 
 Le paradoxe est nommé d'après la formule de Bayes, qui est au final la seule formule qui permette de penser rationnellement à tous les problèmes de tests de détection.
 
