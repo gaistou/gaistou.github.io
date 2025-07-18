@@ -53,11 +53,11 @@ $$
 
 Avec :
 
-- $$P(M \mid A)$$ : la probabilité qu’il y ait **vraiment une menace** sachant qu’une alerte a été levée.
-- $$P(A \mid M)$$ : la probabilité que le système **déclenche une alerte s’il y a une menace** (*sensibilité*).
-- $$P(A \mid \neg M)$$ : la probabilité que le système **déclenche une alerte alors qu’il n’y a pas de menace** (*taux de faux positifs*).
+- $$P(M \mid A)$$ : la probabilité qu’il y ait vraiment une menace sachant qu’une alerte a été levée.
+- $$P(A \mid M)$$ : la probabilité que le système déclenche une alerte s’il y a une menace (*sensibilité*).
+- $$P(A \mid \neg M)$$ : la probabilité que le système déclenche une alerte alors qu’il n’y a pas de menace (*taux de faux positifs*).
 - $$P(M)$$ : la fréquence réelle des menaces (*prévalence*).
-- $$P(\neg M) = 1 - P(M)$$ : la probabilité qu’il n’y ait **pas** de menace.
+- $$P(\neg M) = 1 - P(M)$$ : la probabilité qu’il n’y ait pas de menace.
 
 Évidemment, c'est pas une formule qu'on peut facilement calculer dans sa tête tous les jours. Mais elle existe, et elle donne une réalité mathématique aux problèmes de détection. Et cette réalité elle est cinglante : ce n’est pas ton EDR, ni ton analyste, ni ta règle YARA qui sont “nuls”... c’est juste que dans un monde où la prévalence de la malveillance dans les données est faible, la proba d’avoir une vraie alerte est mathématiquement faible aussi, même si tout fonctionne bien.
 
