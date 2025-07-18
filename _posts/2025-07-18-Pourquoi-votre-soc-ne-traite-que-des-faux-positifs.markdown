@@ -102,7 +102,7 @@ $$
 P(M \mid A) = \frac{0.0000009999}{0.0001009998} \approx 0.0099
 $$
 
-Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes. C’est la réalité statistique, pas un bug de ton SIEM.
+Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes. Et ça c’est juste la réalité statistique, pas un bug de ton SIEM.
 
 Et voilà comment Bayes a tué ton SOC. Pas ton analyste. Pas ton outil. Juste les maths.
 
