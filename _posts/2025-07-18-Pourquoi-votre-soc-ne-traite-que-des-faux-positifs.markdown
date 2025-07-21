@@ -15,7 +15,7 @@ Alors évidemment, on a tous les mêmes suspects habituels :
 
 On aime se bercer de l’illusion qu’avec des règles bien pensées, des outils bien configurés et des analystes compétents, la détection serait efficace. Mais si tout ça relevait du fantasme ? Et si le problème était plus profond, plus systémique… voire mathématique ?
 
-Je travaille dans un SOC, et ça fait quelques années que je rumine le paradoxe de Bayes. Et aujourd’hui, j’en suis arrivé à une conclusion qui va en décevoir plus d’un : la détection, telle qu’on l’imagine dans nos SOC, est mathématiquement vouée à l’échec. Pas parce qu’on est mauvais. Mais parce que le problème est intrinsèquement mal posé.
+J'ai travaillé dans plusieurs SOC, et ça fait quelques années que je rumine le paradoxe de Bayes. Et aujourd’hui, j’en suis arrivé à une conclusion qui va en décevoir plus d’un : la détection, telle qu’on l’imagine dans nos SOC, est mathématiquement vouée à l’échec. Pas parce qu’on est mauvais. Mais parce que le problème est intrinsèquement mal posé.
 
 Alors dans cet article, je vais vous parler de Bayes, de proba, de malveillance, en restant le plus pédagogique possible ne vous en faites pas. En conclusion je vous proposerai une autre manière de penser la détection, une façon plus formalisée, moins naïve, car bien sûr tout n'est pas à jeter. Vous avez 5 minutes ? On y va.
 
@@ -29,18 +29,18 @@ Intuitivement, on a envie de répondre : "bah... 99%, non ?".
 
 Raté ! Et pas qu'un peu.
 
-Parce que la seule information que vous avez ici, c’est le pourcentage de vrais positifs. Il vous manque une donnée cruciale : la prévalence de la maladie. C’est-à-dire, à quel point la maladie est fréquente dans la population générale. Et c'est là que ça fait mal. Avec une faible prévalence (ce qui est le cas du VIH aujourd’hui en France), même un test très fiable produira plus de faux positifs que de vrais positifs. En réalité, vos chances d’avoir le VIH après un test positif sont autour de 1 à 10 %, malgré la "fiabilité" apparente du test.
+Parce qu'il vous manque une donnée cruciale pour pouvoir répondre à la question : la prévalence de la maladie. C’est-à-dire, à quel point la maladie est fréquente dans la population générale. Et c'est là que ça fait mal. Avec une faible prévalence (ce qui est le cas du VIH aujourd’hui en France), même un test très fiable produira plus de faux positifs que de vrais positifs. En réalité, vos chances d’avoir le VIH après un test positif sont autour de 1 à 10 %, malgré la "fiabilité" apparente du test.
 
 Alors, vous commencez à voir où je veux en venir ?
 
 
 ## Oui mais attends... que vient faire la prévalence dans cette histoire ?
 
-Pas besoin de sortir les équations pour se convaincre. Deux cas extrêmes suffisent :
+Pas besoin de sortir les équations pour se convaincre que la prévalence compte. Deux cas extrêmes suffisent :
 - Si la prévalence est nulle (personne n'a le SIDA dans la population), alors tous les résultats positifs au test sont forcément faux. Tous les positifs sont des faux-positifs.
 - Si la prévalence est maximale (toute la population a le SIDA), alors le test ne peut faire aucun faux-positif, car tous les positifs sont forcément vrais. Tous les positifs sont des vrai-positifs.
 
-Pour une démonstration mathématique rigoureuse je vous redirige vers cet article très bien écrit [todo]
+Oui ça peut faire bizarre, mais il n'y a pas d'arnaque. C'est l'éternel problème de l'aiguille dans la botte de foin, et plus il y'a de foin, plus il y'a de chances de faire des erreurs de détection. Pour une démonstration mathématique rigoureuse je vous redirige vers cet article très bien écrit : [todo]
 
 Le paradoxe est nommé d'après la formule de Bayes, qui est au final la seule formule qui permette de penser rationnellement à tous les problèmes de tests de détection.
 
@@ -51,25 +51,27 @@ P(M \mid A) = \frac{P(A \mid M) \cdot P(M)}{P(A \mid M) \cdot P(M) + P(A \mid \n
 \end{equation}
 $$
 
-Avec :
+Appliquée à un SOC :
 
 - $$P(M \mid A)$$ : la probabilité qu’il y ait vraiment une menace sachant qu’une alerte a été levée.
 - $$P(A \mid M)$$ : la probabilité que le système déclenche une alerte s’il y a une menace (*sensibilité*).
 - $$P(A \mid \neg M)$$ : la probabilité que le système déclenche une alerte alors qu’il n’y a pas de menace (*taux de faux positifs*).
-- $$P(M)$$ : la fréquence réelle des menaces (*prévalence*).
-- $$P(\neg M) = 1 - P(M)$$ : la probabilité qu’il n’y ait pas de menace.
+- $$P(M)$$ : la probabilité a priori qu'il y ait une menace (*prévalence*).
+- $$P(\neg M) = 1 - P(M)$$ : la probabilité a priori qu’il n’y ait pas de menace.
 
 Évidemment, c'est pas une formule qu'on peut facilement calculer dans sa tête tous les jours. Mais elle existe, et elle donne une réalité mathématique aux problèmes de détection. Et cette réalité elle est cinglante : ce n’est pas ton EDR, ni ton analyste, ni ta règle YARA qui sont “nuls”... c’est juste que dans un monde où la prévalence de la malveillance dans les données est faible, la proba d’avoir une vraie alerte est mathématiquement faible aussi, même si tout fonctionne bien.
 
 ## Le Paradoxe de Bayes m'a tuer
 
-Alors, à quel point la formule de Bayes fait mal à mon SOC ? Prenons un exemple pour s'en faire une idée.
+Alors, à quel point la formule de Bayes fait mal à ton SOC ? Prenons un exemple pour s'en faire une idée.
 
-- Je cherche à détecter un événement malveillant dans mes logs.
-- On ne peut pas le savoir à l'avance dans la vraie vie, mais supposons que 1 événement sur 1 million est malveillant dans mes données. 
-- Supposons que j'ai une règle de détection avec 99.99 % de sensibilité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000.
+- On cherche à détecter un événement malveillant dans nos logs.
+- On ne peut pas le savoir à l'avance dans la vraie vie, mais supposons que 1 événement sur 1 million est malveillant dans nos données. 
+- Supposons qu'on a une règle de détection avec 99.99 % de sensibilité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000.
 
-Ma règle de détection vient de sonner. Quelle est la probabilité que ce soit une vraie alerte ? Posé autrement : quelle est la probabilité qu’il y ait réellement une menace, sachant qu’il y a une alerte ?
+La règle de détection vient de sonner. Quelle est la probabilité que ce soit une vraie alerte ? Posé autrement : quelle est la probabilité qu’il y ait réellement une menace, sachant qu’il y a une alerte ?
+
+On utilise notre formule de Bayes :
 
 $$
 \begin{equation}
@@ -102,13 +104,13 @@ $$
 P(M \mid A) = \frac{0.0000009999}{0.0001009998} \approx 0.0099
 $$
 
-Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes. Et ça c’est juste la réalité statistique, pas un bug de ton SIEM.
+Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes (il y a probablement 0 événement malveillant sur votre système en réalité). Et ça c’est juste la réalité statistique, pas un bug de ton SIEM.
 
-Et voilà comment Bayes a tué ton SOC. Pas ton analyste. Pas ton outil. Juste les maths.
+Et voilà comment Bayes a tué ton SOC. Pas tes analystes. Pas tes outils. Juste les maths.
 
 ## Conclusion
 
-Oui, c’est déprimant. Ça me déprime. Profondément.
+Oui, c’est déprimant. Moi ça me déprime. Profondément.
 
 Aujourd’hui, les SOC sont structurellement condamnés à traiter majoritairement des faux positifs. Pas par incompétence. Pas par faute d’outils. Mais parce que la réalité statistique du monde numérique est contre nous.
 
