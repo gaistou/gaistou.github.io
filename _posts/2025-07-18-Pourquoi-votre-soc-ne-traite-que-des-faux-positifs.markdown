@@ -29,7 +29,7 @@ Intuitivement, on a envie de répondre : "bah... 99%, non ?".
 
 Raté ! Et pas qu'un peu.
 
-Parce qu'il vous manque une donnée cruciale pour pouvoir répondre à la question : la prévalence de la maladie. C’est-à-dire, à quel point la maladie est fréquente dans la population générale. Et c'est là que ça fait mal. Avec une faible prévalence (ce qui est le cas du VIH aujourd’hui en France), même un test très fiable produira plus de faux positifs que de vrais positifs. En réalité, vos chances d’avoir le VIH après un test positif sont autour de 1 à 10 %, malgré la "fiabilité" apparente du test.
+Parce qu'il vous manque une donnée cruciale pour pouvoir répondre à la question : la prévalence de la maladie. C’est-à-dire, à quel point la maladie est fréquente dans la population générale. Et c'est là que ça fait mal. Avec une faible prévalence (ce qui est le cas du VIH aujourd’hui en France), même un test très fiable produira plus de faux positifs que de vrais positifs. En réalité, en France, vos chances d’avoir le VIH après un test positif sont autour de 10%, malgré la "fiabilité" apparente du test.
 
 Alors, vous commencez à voir où je veux en venir ?
 
