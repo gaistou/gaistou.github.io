@@ -1,1 +1,1 @@
-https://github.com/gaistou/gaistou.github.io
+https://gaistou.github.io/
