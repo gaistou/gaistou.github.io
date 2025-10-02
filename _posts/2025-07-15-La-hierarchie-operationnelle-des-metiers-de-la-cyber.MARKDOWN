@@ -14,8 +14,8 @@ A partir de l'attaquant, on peut établir une chaine hiérarchique opérationnel
 
 En dessous de cette chaîne opérationnelle, on peut ajouter deux couches non réactives : la prévention et la gouvernance. Contrairement à ce qu’on pourrait croire, elles ne fondent pas l’opérationnel : c’est l’inverse. Elles n’ont de sens qu’en réaction à l’existence d’attaques, d’incidents et d’équipes qui y répondent.
 
-![image](../assets/images/hierarchie_cyber.png)
-_Image Caption_
+![image](/assets/images/hierarchie_cyber.png)
+
 
 ## Niveau -1 : Conformité & Gouvernance
 
