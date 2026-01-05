@@ -74,8 +74,8 @@ On peut résumer ces résultats sous la forme d'un tableau, qu'on appelle une **
 
 |                               | Prédiction : malveillant | Prédiction : non malveillant |
 |-------------------------------|--------------------------|------------------------------|
-| Réalité : malveillant     | VP = 999                 | FN = 1                       |
-| Réalité : non malveillant | FP = 99 999              | VN = 99 899 001              |
+| **Réalité : malveillant**     | VP = 999                 | FN = 1                       |
+| **Réalité : non malveillant** | FP = 99 999              | VN = 99 899 001              |
 
 Alors, est-ce que ce test est “bon” ? Comment interpréter ces chiffres ?
 
@@ -115,8 +115,8 @@ Revenons à notre matrice de confusion et essayons de la voir sous un autre angl
 
 |                               | Prédiction : malveillant | Prédiction : non malveillant |
 |-------------------------------|--------------------------|------------------------------|
-| Réalité : malveillant     | VP = 999                 | FN = 1                       |
-| Réalité : non malveillant | FP = 99 999              | VN = 99 899 001              |
+| **Réalité : malveillant**     | VP = 999                 | FN = 1                       |
+| **Réalité : non malveillant** | FP = 99 999              | VN = 99 899 001              |
 
 Cela vous a peut-être déjà choqué : on obtient tout de même 99 999 faux-positifs pour *seulement* 999 vrais-positifs ! Je peux m'amuser à calculer la proportion des résultats positifs qui sont effectivement des bonnes prédictions :
 
@@ -147,8 +147,8 @@ Revenons à notre matrice de confusion.
 
 |                               | Prédiction : malveillant | Prédiction : non malveillant |
 |-------------------------------|--------------------------|------------------------------|
-| Réalité : malveillant     | VP = 999                 | FN = 1                       |
-| Réalité : non malveillant | FP = 99 999              | VN = 99 899 001              |
+| **Réalité : malveillant**     | VP = 999                 | FN = 1                       |
+| **Réalité : non malveillant** | FP = 99 999              | VN = 99 899 001              |
 
 Visuellement, on a déjà calculé :
 - le rapport de chaque valeur par rapport à sa ligne :
@@ -184,7 +184,7 @@ Dans la vraie vie, l'importance de chacune de ces métriques dépend selon la si
 
 On peut modéliser ces préférence avec de nouvelles métriques qui combinent nos 4 métriques fondamentales, on peut alors obtenir : exactitude, F1-score, MCC, balanced accuracy, kappa, net benefit, expected utility, etc... Les possibilités sont presque infinies.
 
-Dans notre cas on va s'intéresser uniquement au **F1-score**, qui est de loin le plus utilisé. L'idée du F1-score est de donner de donner une importance égale à la sensibilité et la précision, et d'ignorer la spécificité. De plus, on veut fortement pénaliser les situations où l’une des deux valeurs est très faible. L’outil mathématique pour cela est la moyenne harmonique de la sensibilité et de la précision :
+Dans notre cas on va s'intéresser uniquement au **F1-score**, qui est de loin le plus utilisé. L'idée du F1-score est de donner une importance égale à la sensibilité et la précision, et d'ignorer la spécificité. De plus, on veut fortement pénaliser les situations où l’une des deux valeurs est très faible. L’outil mathématique pour cela est la moyenne harmonique de la sensibilité et de la précision :
 - F1-score = (2 * précision * sensibilité) / (précision + sensibilité)
 
 Dans notre exemple on obtient :
@@ -223,7 +223,7 @@ Dans le domaine de la détection d'intrusion plus généraliste, la prévalence 
 
 Un bon moyen de se rendre compte du problème est de faire un graphique. A faible prévalence, la sensibilité a en fait peu d'impact sur la précision (voir Annexe I), disons qu'on la fixe à 99%. On va ensuite regarder comment évolue la précision en fonction de la spécificité (entre 98 et 100%) pour des valeurs faibles de prévalence (entre 0 et 0.1%).
 
-![image](/assets/images/precision_et_sp.png){: width="400" height="600" }
+![image](/assets/images/precision_et_sp.png){: width="1000" height="1000" }
 
 
 Sur ce graphe, la zone en vert-jaune correspond aux couples (P, Sp) pour lesquels la précision devient acceptable. On observe que cette zone n’apparaît que pour des valeurs de spécificité extrêmement élevées. Si élevées en fait, qu'elles sont complètement irréalistes dans la vraie vie.
