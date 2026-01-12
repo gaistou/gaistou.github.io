@@ -12,7 +12,7 @@ A partir de l'attaquant, on peut établir une chaine hiérarchique opérationnel
 - Pas d’attaque → pas d'incident.
 - Pas d'incident → pas de détection.
 
-En dessous de cette chaîne opérationnelle, on peut ajouter deux couches non réactives : la prévention et la gouvernance. Contrairement à ce qu’on pourrait croire, elles ne fondent pas l’opérationnel : c’est l’inverse. Elles n’ont de sens qu’en réaction à l’existence d’attaques, d’incidents et d’équipes qui y répondent.
+En dessous de cette chaîne opérationnelle, on peut ajouter deux couches non opérationnelles : la prévention et la gouvernance. Contrairement à ce qu’on pourrait croire, elles ne sont le fondement de rien. Elles aussi n’ont de sens qu’en réaction à l’existence d’attaques, d’incidents et d’équipes qui y répondent.
 
 ![image](/assets/images/hierarchie_cyber.png){: width="400" height="600" }
 
@@ -21,9 +21,9 @@ En dessous de cette chaîne opérationnelle, on peut ajouter deux couches non r�
 
 **Exemples :** GRC, DPO, responsables conformité, RSSI purement administratifs, CTI stratégique
 
-Ici, on retrouve tous les rôles qui gravitent autour de la sécurité sans jamais entrer en contact avec une attaque. Leur production est surtout documentaire : politiques, matrices de risques, schémas organisationnels ... Bref, ils posent le cadre administratif et réglementaire de la sécurité des systèmes d’information.
+Ici, on retrouve tous les rôles qui gravitent autour de la sécurité sans jamais entrer en contact avec une attaque. Leur production est surtout documentaire : politiques, matrices de risques, schémas organisationnels ... Bref, ils posent le cadre administratif et réglementaire.
 
-Dans une logique opérationnelle, ces fonctions restent en retrait. Elles ne “font” pas la sécurité au sens technique du terme, mais elles la traduisent dans la langue de l’entreprise : budgets, lois, contrats, enjeux politiques. Leur rôle, c’est de faire le pont entre ce qui se passe dans le cyberespace et ce qui compte dans la vie réelle des organisations.
+Dans le schéma opérationnel, ces fonctions restent en retrait. Elles ne “font” pas la sécurité au sens technique du terme, mais elles la traduisent dans la langue de l’entreprise : budgets, lois, contrats, enjeux politiques. Leur rôle, c’est de faire le pont entre ce qui se passe dans le cyberespace et ce qui compte dans la vie réelle des organisations.
 
 La CTI dite 'stratégique' peut aussi être rangée ici, lorsqu’elle produit un renseignement pensé uniquement pour alimenter la gouvernance, sans lien direct avec la détection ou la réponse aux incidents.
 
