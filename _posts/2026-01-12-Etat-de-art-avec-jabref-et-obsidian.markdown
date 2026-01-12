@@ -37,7 +37,7 @@ Pour ma part, voici la hiérarchie de dossiers que j'utilise :
 - Scripts : Contient des scripts d'automatisation, en particulier ce dossier sera utilisé par Git pour le partage de certaines notes.
 - Vrac : Contient tout ce qui n'est pas assez clair ou abouti pour être dans un des autres dossiers, c'est le bac à sable.
 
-![image](/assets/images/obsidian5.png){: width="140" height="500" }
+![image](/assets/images/obsidian5.png){: width="210" height="750" }
 
 Le cœur de la structure est le dossier "Concepts", c'est ici que se développent les idées selon la méthode Zettelkasten. Les autres dossiers ne servent que d'espace de travail pour soutenir cet objectif. 
 
