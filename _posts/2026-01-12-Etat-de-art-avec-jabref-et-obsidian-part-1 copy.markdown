@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Construire son état de l'art avec JabRef et Obsidian
+title: Construire son état de l'art avec JabRef et Obsidian 1/2
 tags: [recherche]
 ---
 
