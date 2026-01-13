@@ -57,7 +57,7 @@ Le second dépôt correspond à la version adaptée à la publication. Il n’es
 
 ## En conclusion
 
-Ainsi s'achève cette petite série d'article sur ma méthode de travail.
+Ainsi s'achève cette petite série d'articles sur ma méthode de travail.
 
 Cette démarche de publication de mes notes est particulièrement utile pour partager mon avancement avec mon directeur de thèse et mes encadrants. Je peux facilement me référer à mes travaux en cours et leur envoyer des liens vers les différents concepts que j'explore.
 
