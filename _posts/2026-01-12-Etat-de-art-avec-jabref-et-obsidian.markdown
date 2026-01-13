@@ -5,11 +5,11 @@ tags: [recherche]
 ---
 
 
-Je me suis récemment engagé dans une thèse de doctorat dans le domaine de la cyber, ce qui m'a enfin forcé à mettre en place une méthode de travail rigoureuse pour garder un fil dans mes idées et ancrer durablement ce que j'apprends. Après environ quatre mois d’usage quotidien, j’ai fini par stabiliser une méthode et une suite d'outils qui me conviennent et qui correspondent à ma manière de concevoir le travail de recherche. 
+Je me suis récemment engagé dans une thèse de doctorat, ce qui m'a enfin forcé à mettre en place une méthode de travail rigoureuse pour garder un fil dans mes idées et ancrer durablement ce que j'apprends. Après environ quatre mois d’usage quotidien, j’ai fini par stabiliser une méthode et une suite d'outils qui me conviennent et qui correspondent à ma manière de concevoir le travail de recherche, et je souhaite la partager avec vous.
 
-L'idée centrale est la suivante : la recherche ce n'est pas une attente passive de l'illumination, mais un travail itératif de construction et de mise en relation d'idées et de concepts. 
+L'idée centrale est la suivante : la recherche ce n'est pas une attente passive de l'illumination, mais un travail itératif de construction et de mise en relation d'idées et de concepts. Et on va construire un système autour de cette idée.
 
-Pour donner une idée concrète du résultat, voici à quoi ressemble mon environnement de travail après ces quatre premiers mois de recherche.
+Pour donner une idée concrète du résultat et vous donner envie de lire la suite, voici à quoi ressemble mon environnement de travail après ces quatre premiers mois de recherche.
 
 ![image](/assets/images/obsidian1.png){: width="1000" height="1000"}
 
@@ -18,9 +18,10 @@ Pour donner une idée concrète du résultat, voici à quoi ressemble mon enviro
 
 Obsidian est un outil de prise de notes basé sur des fichiers Markdown. Chaque note est un simple fichier texte, lisible sans Obsidian, versionnable, stocké localement, indépendant de toute connexion Internet. Le format Markdown permet une prise de notes légère et facile à partager, sans soucis de mise en page ou de format de fichier propriétaire.
 
-Mais le format Markdown n’est pas le principal intérêt d’Obsidian. Son point fort réside dans la possibilité de créer facilement des liens explicites entre les notes, et de visualiser ces liens sous forme de graphe. Chaque note peut être reliée à d’autres par des liens hypertextes, ce qui permet de suivre un raisonnement ou une idée de note en note.
+Mais le format Markdown n’est pas le principal intérêt d’Obsidian. Son point fort réside dans la possibilité de créer facilement des liens explicites entre les notes, et de visualiser ces liens sous forme de graphe. Chaque note peut être reliée à d’autres par des liens hypertextes, ce qui permet de suivre un raisonnement ou une idée de note en note, comme sur un wiki en somme.
 
 ![image](/assets/images/obsidian4.png){: width="1000" height="1000"}
+*Un exemple de note dans Obsidian*
 
 Enfin, Obsidian permet également d’organiser les fichiers dans une hiérarchie classique de dossiers. On dispose ainsi de deux modes de navigation complémentaires :
 - une navigation hiérarchique, lorsqu’on cherche une note précise ;
