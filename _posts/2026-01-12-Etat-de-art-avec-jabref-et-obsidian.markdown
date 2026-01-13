@@ -47,11 +47,14 @@ Le cœur de la structure est le dossier "Concepts", c'est ici que se développen
 
 ## Prendre des notes efficacement en s'inspirant de Zettelkasten
 
-La méthode Zettelkasten est une approche de prise de notes et de construction de connaissances qui repose sur l’idée que la recherche et la production intellectuelle consistent à faire émerger progressivement des structures de sens à partir d’idées élémentaires. On retrouve ici mon idée de départ que le travail de recherche est avant tout un travail de construction.
+Je n'applique pas la méthode Zettelkasten à la lettre, je m'inspire seulement de quelques grands principes qui s'alignent bien avec ma façon de concevoir la recherche. 
+
+La méthode Zettelkasten est une approche de prise de notes et de construction de connaissances qui repose sur l’idée que la recherche et la production intellectuelle consistent à faire émerger progressivement des structures de sens à partir d’idées élémentaires. On retrouve ici mon idée de départ que le travail de recherche est avant tout un travail de construction. 
 
 Concrètement, la Zettelkasten s’appuie sur des notes courtes et atomiques, chacune centrée sur une idée unique, et reliées entre elles par des liens sémantiques. Le réseau ainsi formé permet de naviguer d’idée en idée, de faire apparaître des relations inattendues, et d’identifier des zones encore peu explorées. On retrouve ici des principes proches de ceux mis en avant par Obsidian.
 
 L’un des points clés de cette méthode est la séparation entre les sources (articles, livres, documents) et les notes conceptuelles. Celles-ci constituent un espace de pensée autonome et sont systématiquement rédigées manuellement. Ce détachement de la source force à réinterpréter les concepts à sa manière et à formuler explicitement les liens sémantiques entre les concepts. Dans mes notes, je ne mentionne la source que quand c'est réellement important pour comprendre le concept. On retrouve ici une idée que j'aime bien : qu’un concept n’est réellement assimilé que lorsqu’on est capable de se l’expliquer intégralement à soi-même.
+
 
 ![image](/assets/images/obsidian7.png){: width="1000" height="1000"}
 *2 exemples de notes conceptuelles atomiques*
