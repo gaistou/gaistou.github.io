@@ -38,13 +38,13 @@ On a donc deux problèmes. D’une part, il faut transformer les liens Obsidian 
 
 ## Python à la rescousse
 
-Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puisque rien n'existe sur étagère, on va le faire nous même en Python ! Vous pouvez retrouver l'ensemble du code sur mon Github ici : todo.
+Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puisque rien n'existe sur étagère, on va le faire nous même en Python ! Vous pouvez retrouver l'ensemble du code sur mon Github [ici](https://github.com/gaistou/Obsidian_to_gitea).
 
 
 L'architecture est la suivante :
 - altlink.py contient la logique de conversion : parsing des liens Obsidian, gestion des alias ([[Note|alias]]), résolution du fichier cible, et génération d’un lien Markdown relatif compatible Gitea.
 - export_all.py parcourt le vault Obsidian et génère une copie de l’arborescence, dans laquelle tous les liens ont été réécrits au format Gitea.
-- un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage.
+- un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage. Le fichier prepush est à placer dans votre .git/hooks de votre projet.
 
 Le résultat final est donc deux dépôts Git distincts hébergés sur Gitea, chacun avec un rôle bien défini.
 
