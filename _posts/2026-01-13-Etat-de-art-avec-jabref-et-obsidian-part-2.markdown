@@ -52,7 +52,7 @@ Le premier dépôt correspond à la version brute du vault Obsidian. C’est cel
 
 Le second dépôt correspond à la version adaptée à la publication. Il n’est jamais pull localement dans Obsidian, car les liens ne fonctionneraient plus sur Obsidian. Ce dépôt permet uniquement à d’autres personnes de naviguer simplement dans mes notes via Gitea, sans avoir à instlaler Obsidian ou quoi que ce soit.
 
-![alt text](obsidian200.png){: width="1000" height="1000"}
+![image](/assets/images/obsidian200.png){: width="1000" height="1000"}
 *Une note consultable dans Gitea. Tous les liens sont clicables !*
 
 
