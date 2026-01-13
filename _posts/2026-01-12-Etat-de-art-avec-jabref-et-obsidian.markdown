@@ -142,4 +142,4 @@ Voilà la méthode que j’utilise aujourd’hui. Elle me convient, elle me perm
 
 Ce système ne vise pas à optimiser la production, ni à garantir la qualité des idées. Il sert avant tout à alléger la charge cognitive du travail de recherche : garder une trace des concepts, rendre visibles les liens, s'approprier les idées. Il amplifie autant les bonnes intuitions que les mauvaises, et ne remplace en aucun cas la rigueur intellectuelle du bon chercheur.
 
-L'article commence à être long, j'aborderai donc le dernier point dans un prochain article : comment utiliser Gitea pour versionner et partager ce type de base de connaissances.
+L'article commence à être long, j'aborderai donc le dernier point dans un prochain article : comment versionner et partager ce type de base de connaissances avec Gitea.
