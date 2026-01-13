@@ -26,7 +26,7 @@ L’objectif de cet article est de fournir une grille de lecture claire pour com
 C'est parti.
 
 
-# 1. C'est quoi un test de détection ?
+## 1. C'est quoi un test de détection ?
 
 Commençons par nous donner un vocabulaire de base, pour s'assurer qu'on parle bien le même langage.
 
@@ -51,7 +51,7 @@ Par exemple : un vrai-négatif désigne une bonne (vrai) prédiction de l'absenc
 Il est crucial de bien distinguer ces quatre situations. Toute la suite des explications dépend de cette base. Si ces termes ne sont pas clairs pour vous, aucun raisonnement ultérieur ne le sera.
 
 
-# 2. Évaluer un test de détection : sensibilité et spécificité
+## 2. Évaluer un test de détection : sensibilité et spécificité
 
 On cherche maintenant à savoir si notre test est *efficace*. Pour ce faire, on va évaluer le test sur un ensemble d’événements déjà qualifiés de manière certaine comme malveillant ou non malveillant, et comparer les prédictions à la vérité. On dit que cet ensemble est **labellisé**.
 
@@ -109,7 +109,7 @@ On obtient ainsi une première interprétation des performances du test :  99,9 
 Mais on raterait en fait encore une grande partie du problème.
 
 
-# 3. La tromperie de la prévalence et la précision
+## 3. La tromperie de la prévalence et la précision
 
 Revenons à notre matrice de confusion et essayons de la voir sous un autre angle :
 
@@ -141,7 +141,7 @@ Oublier de penser à la précision et à la prévalence n’est pas une erreur d
 Le jeu de donnée labellisé pris en exemple ici a volontairement une prévalence faible pour mettre en avant l'importance de la précision. La précision nous indique que les valeurs de sensibilité et de spécificité de notre test, bien qu'en apparence élevées, ne sont en fait pas assez bonnes pour rendre le test pertinent sur des données avec une prévalence aussi faible. (Voir Annexe I pour une démonstration formelle).
 
 
-# 4. Et les autres métriques ?
+## 4. Et les autres métriques ?
 
 Revenons à notre matrice de confusion.
 
@@ -194,7 +194,7 @@ Dans notre exemple on obtient :
 On obtient un F1-score très faible, cohérent avec notre mauvaise précision.
 
 
-# 5. Conclusion pratique
+## 5. Conclusion pratique
 
 Résumons ce qu'on doit retenir sur les métriques que l'on vient d'apprendre :
 
@@ -213,7 +213,7 @@ Maintenant qu'on comprend bien nos métriques, on peut en tirer les conclusions 
 Ces conclusions pratiques sont en fait alignés avec le F1-score, qui est donc une métrique pertinente dans notre domaine. Cependant, n'hésitez pas à toujours aller jeter un œil à la sensibilité et la précision cachées derrières.
 
 
-# 6. Ouverture sur l'éternel problème de la prévalence
+## 6. Ouverture sur l'éternel problème de la prévalence
 
 Sur nos données labellisées, dans lesquelles la prévalence de la malveillance est très faible, on obtient une mauvaise précision, et donc un mauvais F1-Score. Mais alors, comment on résout ce problème de la prévalence ? comment on peut s'assurer d'avoir un test qui aura une bonne précision malgré une faible prévalence dans les données ?
 
@@ -231,7 +231,7 @@ Sur ce graphe, la zone en vert-jaune correspond aux couples (P, Sp) pour lesquel
 On arrive à une conclusion inconfortable : il est aujourd’hui irréaliste d’imaginer un système de détection généraliste, appliqué événement par événement, qui atteigne une spécificité suffisante pour avoir une bonne précision à faible prévalence. **La seule solution n’est donc pas d’améliorer le test, mais de réduire ses ambitions. Peu importent vos chiffres de sensibilité et de spécificité, vous n'aurez réalistement jamais une bonne précision. Vous n'aurez jamais de système magique qui détecte toutes les attaques sans faire des milliers de faux-positifs.**
 
 
-# 7. Qu'est-ce qu'on fait alors ?
+## 7. Qu'est-ce qu'on fait alors ?
 
 Honnêtement ? Je ne sais pas vraiment. L'objectif de cet article était seulement d'avoir tous les outils pour prendre conscience du problème.
 
@@ -239,7 +239,7 @@ Mais on continuera d'explorer la question dans les 2 prochains articles :
 - Repenser la détection avec la formule de Bayes.
 - Comment détecter une attaque dans détecter les attaques ?
 
-# ANNEXE I
+## ANNEXE I
 
 ```
 Pour mieux comprendre les liens, on va exprimer la précision comme fonction de la sensibilité, de la spécificité et de la prévalence (sans faire encore appel à aucune notion de probabilités).
