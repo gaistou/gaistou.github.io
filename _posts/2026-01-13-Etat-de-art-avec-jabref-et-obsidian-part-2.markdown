@@ -17,12 +17,10 @@ En parallèle, Gitea est une interface web légère, auto-hébergée, qui permet
 
 Notre objectif est donc de publier nos notes dans un projet Gitea, et de pouvoir naviguer entre elles directement depuis l’interface web, comme si on était dans Obsidian.
 
-* capture d'écran du résultat dans Gitea
-
 
 ## Les limites de Gitea pour un projet Obsidian
 
-Le premier problème immédiat lorsqu’on publie un projet Obsidian dans Gitea concerne les liens internes. Obsidian utilise une syntaxe de liens spécifique ([[Note]], [[Note|alias]]) qui n’est pas compatible avec le Markdown attendu par Gitea. Par défaut, les liens ne sont donc pas résolus côté Gitea : ils apparaissent comme du texte brut et ne permettent pas de naviguer correctement entre les notes.
+Le premier problème immédiat lorsqu’on publie un projet Obsidian dans Gitea concerne les liens internes. Obsidian utilise une syntaxe de liens spécifique (`[[Note]]`, `[[Note|alias]]`) qui n’est pas compatible avec le Markdown attendu par Gitea. Par défaut, les liens ne sont donc pas résolus côté Gitea : ils apparaissent comme du texte brut et ne permettent pas de naviguer correctement entre les notes.
 
 Le second problème concerne le graphe. Le graphe Obsidian est un outil purement interne, généré dynamiquement à partir des liens entre les notes. Obsidian ne fournit pas de mécanisme moyen simple pour l’exporter, ou le re-générer. Spoiler : je n’ai malheureusement pas encore trouvé de solution satisfaisante pour ce point, et le graphe ne sera donc pas traité dans cet article.
 
@@ -31,9 +29,9 @@ Nous allons donc nous concentrer sur la correction des liens dans Gitea.
 
 ## La différence entre les liens Obsidian et les liens Gitea
 
-Les liens Obsidian et les liens Markdown utilisés par Gitea n'utilisent pas le même format. Dans Obsidian, un lien comme [[PDP]] ou [[Measham2001|Policy Decision Point]] ne pointe pas vers un chemin de fichier explicite, mais vers une note identifiée uniquement par son nom. C'est Obsidian qui se charge de résoudre le lien, et de retrouver le bon fichier, quel que soit son emplacement réel dans l’arborescence. À l’inverse, Gitea ne comprend que des liens Markdown classiques, avec des chemins relatifs explicites vers des fichiers existants, par exemple : `[@Measham2001](../../../Reading%20notes/@Measham2001.md)`.
+Les liens Obsidian et les liens Markdown utilisés par Gitea n'utilisent pas le même format. Dans Obsidian, un lien comme `[[PDP]` ou `[[Measham2001|Policy Decision Point]]` ne pointe pas vers un chemin de fichier explicite, mais vers une note identifiée uniquement par son nom. C'est Obsidian qui se charge de résoudre le lien, et de retrouver le bon fichier, quel que soit son emplacement réel dans l’arborescence. À l’inverse, Gitea ne comprend que des liens Markdown classiques, avec des chemins relatifs explicites vers des fichiers existants, par exemple : `[@Measham2001](../../../Reading%20notes/@Measham2001.md)`.
 
-On a donc deux problèmes. D’une part, il faut transformer les liens Obsidian en liens Markdown pointant vers le bon chemin relatif dans le dépôt Git. D’autre part, il faut préserver correctement les alias ([[Note|alias]]).
+On a donc deux problèmes. D’une part, il faut transformer les liens Obsidian en liens Markdown pointant vers le bon chemin relatif dans le dépôt Git. D’autre part, il faut préserver correctement les alias (`[[Note|alias]]`).
 
 
 ## Python à la rescousse
@@ -42,7 +40,8 @@ Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puis
 
 
 L'architecture est la suivante :
-- altlink.py contient la logique de conversion : parsing des liens Obsidian, gestion des alias ([[Note|alias]]), résolution du fichier cible, et génération d’un lien Markdown relatif compatible Gitea.
+
+- altlink.py contient la logique de conversion : parsing des liens Obsidian, gestion des alias (`[[Note|alias]]`), résolution du fichier cible, et génération d’un lien Markdown relatif compatible Gitea.
 - export_all.py parcourt le vault Obsidian et génère une copie de l’arborescence, dans laquelle tous les liens ont été réécrits au format Gitea.
 - un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage. Le fichier prepush est à placer dans votre .git/hooks de votre projet.
 
