@@ -133,7 +133,7 @@ Régulièrement, je reviens sur mes notes conceptuelles, mon graphe et mon dossi
 
 Le dossier *Vrac* est particulièrement important dans ma boucle de travail, c'est souvent ce dossier qui fait l'intermédiaire entre mes *concepts* et mon dossier *Rédaction*. J'y note toutes mes idées, mes réflexions personnelles sur tout ce que je lis. Puis progressivement je les enrichis jusqu'à ce que ça devienne des notes de *concepts* ou des éléments de *rédaction*.
 
-![image](/assets/images/obsidian5.png){: width="210" height="750" }
+![image](/assets/images/obsidian100.png){: width="210" height="750" }
 *Un échantillon de mon dossier Vrac actuel*
 
 ## Conclusion
