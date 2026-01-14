@@ -9,13 +9,13 @@ Dans l’article précédent, j’ai présenté la méthode de travail que j’u
 Dans cet article nous manipulerons des commandes Git et des scripts d'automatisation en Python, c'est donc préférable d'avoir quelques bases en informatique.
 
 
-## Git et Gitea pour les nuls
+## Git et Gitea
 
-Git est un système de gestion de versions initialement conçu pour le code source, mais dont les principes s’appliquent très bien à tout fichier textuel, comme des fichiers Markdown ou BibTeX Git permet de suivre l’évolution d’un ensemble de fichiers dans le temps, de revenir à des états antérieurs, de comparer des versions et de documenter les changements successifs.
+Git est un système de gestion de versions initialement conçu pour le code source, mais dont les principes s’appliquent très bien à tout fichier textuel, comme les fichiers Markdown ou BibTeX utilisés par Obsidian et JabRef. Git permet de suivre l’évolution d’un ensemble de fichiers dans le temps, de revenir à des états antérieurs, de comparer des versions et de documenter les changements successifs. 
 
-En parallèle, Gitea est une interface web légère, auto-hébergée, qui permet d'héberger ses propres dépots Git. Gitea offre une visualisation lisible de l’historique, des différences entre versions et de la structure des fichiers.
+On gère habituellement ses projets Git via une interface web dédiée, la plus connue étant GitHub. Dans mon cas, j’ai choisi d’utiliser Gitea pour des raisons de gratuité et d’auto-hébergement. Je n’ai pas testé cette méthode avec GitHub ou GitLab, et je ne sais donc pas dans quelle mesure la suite de l’article s’y appliquerait telle quelle.
 
-Notre objectif est donc de publier nos notes dans un projet Gitea, et de pouvoir naviguer entre elles directement depuis l’interface web, comme si on était dans Obsidian.
+L’ensemble de l’arborescence de fichiers présentée dans l’article précédent constitue ainsi un projet Git, poussé sur Gitea. J’ai de cette manière une sauvegarde constamment à jour de mon travail. Git me permet également d’accéder à mes notes depuis n’importe quel environnement — chez moi, au laboratoire ou en déplacement — et de synchroniser systématiquement les modifications entre mes différentes machines.
 
 
 ## Les limites de Gitea pour un projet Obsidian
