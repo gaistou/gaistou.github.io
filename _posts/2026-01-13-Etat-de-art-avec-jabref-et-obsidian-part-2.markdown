@@ -15,12 +15,14 @@ Git est un système de gestion de versions initialement conçu pour le code sour
 
 On gère habituellement ses projets Git via une interface web dédiée, la plus connue étant GitHub. Dans mon cas, j’ai choisi d’utiliser Gitea pour des raisons de gratuité et d’auto-hébergement. Je n’ai pas testé cette méthode avec GitHub ou GitLab, et je ne sais donc pas dans quelle mesure la suite de l’article s’y appliquerait telle quelle.
 
-L’ensemble de l’arborescence de fichiers présentée dans l’article précédent constitue ainsi un projet Git, poussé sur Gitea. J’ai de cette manière une sauvegarde constamment à jour de mon travail. Git me permet également d’accéder à mes notes depuis n’importe quel environnement — chez moi, au laboratoire ou en déplacement — et de synchroniser systématiquement les modifications entre mes différentes machines.
+L’ensemble de l’arborescence de fichiers présentée dans l’article précédent constitue ainsi un projet Git, poussé sur Gitea. J’ai ainsi une sauvegarde à jour de mon travail en permanence. Git me permet également d’accéder à mes notes depuis n’importe quel environnement, chez moi, au laboratoire ou en déplacement, et de synchroniser systématiquement les modifications.
 
 
 ## Les limites de Gitea pour un projet Obsidian
 
-Le premier problème immédiat lorsqu’on publie un projet Obsidian dans Gitea concerne les liens internes. Obsidian utilise une syntaxe de liens spécifique (`[[Note]]`, `[[Note|alias]]`) qui n’est pas compatible avec le Markdown attendu par Gitea. Par défaut, les liens ne sont donc pas résolus côté Gitea : ils apparaissent comme du texte brut et ne permettent pas de naviguer correctement entre les notes.
+Cependant, on rencontre rapidement deux problèmes quand on pousse un projet Obsidian sur Gitea.
+
+Le premier concerne les liens internes. Obsidian utilise une syntaxe de liens spécifique (`[[Note]]`, `[[Note|alias]]`) qui n’est pas compatible avec le Markdown attendu par Gitea. Par défaut, les liens ne sont donc pas résolus côté Gitea et pointent vers des pages inexistantes.
 
 Le second problème concerne le graphe. Le graphe Obsidian est un outil purement interne, généré dynamiquement à partir des liens entre les notes. Obsidian ne fournit pas de mécanisme moyen simple pour l’exporter, ou le re-générer. Spoiler : je n’ai malheureusement pas encore trouvé de solution satisfaisante pour ce point, et le graphe ne sera donc pas traité dans cet article.
 
@@ -36,20 +38,20 @@ On a donc deux problèmes. D’une part, il faut transformer les liens Obsidian 
 
 ## Python à la rescousse
 
-Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puisque rien n'existe sur étagère, on va le faire nous même en Python ! Vous pouvez retrouver l'ensemble du code sur mon Github [ici](https://github.com/gaistou/Obsidian_to_gitea).
+Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puisque rien n'existe sur étagère, je l'ai fait moi même\* en Python ! Vous pouvez retrouver l'ensemble du code sur mon Github [ici](https://github.com/gaistou/Obsidian_to_gitea).
 
 
-L'architecture est la suivante :
+La logique est la suivante :
 
 - altlink.py contient la logique de conversion : parsing des liens Obsidian, gestion des alias (`[[Note|alias]]`), résolution du fichier cible, et génération d’un lien Markdown relatif compatible Gitea.
-- export_all.py parcourt le vault Obsidian et génère une copie de l’arborescence, dans laquelle tous les liens ont été réécrits au format Gitea.
+- export_all.py parcourt le vault Obsidian et génère une copie complète du projet, dans laquelle tous les liens sont réécrits au format Gitea.
 - un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage. Le fichier prepush est à placer dans votre .git/hooks de votre projet.
 
-Le résultat final est donc deux dépôts Git distincts hébergés sur Gitea, chacun avec un rôle bien défini.
+Le résultat final est donc deux dépôts Git distincts hébergés sur Gitea, chacun avec un rôle différent.
 
 Le premier dépôt correspond à la version brute du vault Obsidian. C’est celui que j’utilise au quotidien pour travailler, sauvegarder et versionner mes notes. C’est également ce dépôt que je pull lorsque je travaille sur plusieurs machines ou environnements.
 
-Le second dépôt correspond à la version adaptée à la publication. Il n’est jamais pull localement dans Obsidian, car les liens ne fonctionneraient plus sur Obsidian. Ce dépôt permet uniquement à d’autres personnes de naviguer simplement dans mes notes via Gitea, sans avoir à instlaler Obsidian ou quoi que ce soit.
+Le second dépôt sert à la publication. Je ne le pull jamais et je ne travaille pas dessus. Ce dépôt permet uniquement à d’autres personnes de naviguer simplement dans mes notes via Gitea, sans avoir à instlaler Obsidian ou quoi que ce soit. Et l'automatisation fait que ce dépot est toujours synchronisé avec le dépot principal.
 
 ![image](/assets/images/obsidian200.png){: width="1000" height="1000"}
 *Une note consultable dans Gitea. Tous les liens sont clicables !*
@@ -62,3 +64,5 @@ Ainsi s'achève cette petite série d'articles sur ma méthode de travail.
 Cette démarche de publication de mes notes est particulièrement utile pour partager mon avancement avec mon directeur de thèse et mes encadrants. Je peux facilement me référer à mes travaux en cours et leur envoyer des liens vers les différents concepts que j'explore.
 
 Je n’ai en revanche pas encore trouvé de solution satisfaisante pour exporter le graphe et l’afficher dans Gitea. Le graphe reste donc, pour l’instant, un outil auquel moi seul ai accès. Mais qui sait, ce sera peut-être l’occasion d’un troisième article.
+
+\* J'avoue c'est ChatGPT en fait
