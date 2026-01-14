@@ -4,7 +4,7 @@ title: Construire son état de l'art avec JabRef et Obsidian 2/2
 tags: [recherche]
 ---
 
-Dans l’article précédent, j’ai présenté la méthode de travail que j’utilise pour ma thèse, basée sur Obsidian et JabRef. Aujourd'hui nous verrons comment sauvegarder, versionner et partager ce type de travail grâce à Git et Gitea, et en particulier comment adapter les fonctionnalités d'Obsidian (liens, graphe) pour qu'elles soient bien retranscrites dans Gitea.
+Dans [l’article précédent](https://gaistou.github.io/posts/Etat-de-art-avec-jabref-et-obsidian-part-1/), j’ai présenté la méthode de travail que j’utilise pour ma thèse, basée sur Obsidian et JabRef. Aujourd'hui nous verrons comment sauvegarder, versionner et partager ce type de travail grâce à Git et Gitea, et en particulier comment adapter les fonctionnalités d'Obsidian (liens, graphe) pour qu'elles soient bien retranscrites dans Gitea.
 
 
 ## Git et Gitea

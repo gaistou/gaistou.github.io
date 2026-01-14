@@ -136,10 +136,11 @@ Le dossier *Vrac* est particulièrement important dans ma boucle de travail, c'e
 ![image](/assets/images/obsidian100.png){: width="210" height="750" }
 *Un échantillon de mon dossier Vrac actuel*
 
+
 ## Conclusion
 
 Voilà la méthode que j’utilise aujourd’hui. Elle me convient, elle me permet d’avancer, et surtout elle correspond à ma manière de concevoir le travail de recherche. Elle continuera très probablement à évoluer au fil de la thèse. En revanche, je pense que son cœur : la séparation des sources et des concepts, les notes atomiques, les liens explicites, restera relativement stable.
 
 Ce système ne vise pas à optimiser la production, ni à garantir la qualité des idées. Il sert avant tout à alléger la charge cognitive du travail de recherche : garder une trace des concepts, rendre visibles les liens, s'approprier les idées. Il amplifie autant les bonnes intuitions que les mauvaises, et ne remplace en aucun cas la rigueur intellectuelle du bon chercheur.
 
-L'article commence à être long, j'aborderai donc le dernier point dans un prochain article : comment versionner et partager ce type de base de connaissances avec Gitea.
+L'article commence à être long, j'aborderai donc le dernier point dans [l'article suivant](https://gaistou.github.io/posts/Etat-de-art-avec-jabref-et-obsidian-part-2/) : comment versionner et partager ce type de base de connaissances avec Gitea.
