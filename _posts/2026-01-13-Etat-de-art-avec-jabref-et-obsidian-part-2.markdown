@@ -6,8 +6,6 @@ tags: [recherche]
 
 Dans l’article précédent, j’ai présenté la méthode de travail que j’utilise pour ma thèse, basée sur Obsidian et JabRef. Aujourd'hui nous verrons comment sauvegarder, versionner et partager ce type de travail grâce à Git et Gitea, et en particulier comment adapter les fonctionnalités d'Obsidian (liens, graphe) pour qu'elles soient bien retranscrites dans Gitea.
 
-Dans cet article nous manipulerons des commandes Git et des scripts d'automatisation en Python, c'est donc préférable d'avoir quelques bases en informatique.
-
 
 ## Git et Gitea
 
@@ -38,23 +36,25 @@ On a donc deux problèmes. D’une part, il faut transformer les liens Obsidian 
 
 ## Python à la rescousse
 
-Il nous faut donc un outil de traduction de lien Obsidian en lien Gitea, et puisque rien n'existe sur étagère, je l'ai fait moi même\* en Python ! Vous pouvez retrouver l'ensemble du code sur mon Github [ici](https://github.com/gaistou/Obsidian_to_gitea).
+Il nous faut donc un outil capable de traduire les liens Obsidian en liens compatibles avec Gitea. Comme je n’ai pas trouvé de solution existante correspondant exactement à ce besoin, je l’ai fait moi-même* en Python. Vous pouvez retrouver l'ensemble du code sur mon Github [ici](https://github.com/gaistou/Obsidian_to_gitea).
 
 
 La logique est la suivante :
 
 - altlink.py contient la logique de conversion : parsing des liens Obsidian, gestion des alias (`[[Note|alias]]`), résolution du fichier cible, et génération d’un lien Markdown relatif compatible Gitea.
 - export_all.py parcourt le vault Obsidian et génère une copie complète du projet, dans laquelle tous les liens sont réécrits au format Gitea.
-- un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage. Le fichier prepush est à placer dans votre .git/hooks de votre projet.
+- un hook Git (type pre-push) exécute export_all.py automatiquement avant chaque push. La version originale (liens Obsidian) est publiée sur un dépot de sauvegarde et de versionning, la version modifiée (liens Gitea) est publié sur un dépôt de partage. 
 
-Le résultat final est donc deux dépôts Git distincts hébergés sur Gitea, chacun avec un rôle différent.
+Dans mon cas, les deux fichiers Python sont placés dans le dossier "Scripts" de mon projet Obsidian. Le fichier pre-push doit lui être placé dans votre dossier `.git/hooks` à la racine du projet Obsidian.
+
+Le résultat final est donc deux dépôts Git distincts hébergés sur Gitea, chacun avec un rôle différent. Chaque push publie à la fois sur les deux dépôts.
 
 Le premier dépôt correspond à la version brute du vault Obsidian. C’est celui que j’utilise au quotidien pour travailler, sauvegarder et versionner mes notes. C’est également ce dépôt que je pull lorsque je travaille sur plusieurs machines ou environnements.
 
 Le second dépôt sert à la publication. Je ne le pull jamais et je ne travaille pas dessus. Ce dépôt permet uniquement à d’autres personnes de naviguer simplement dans mes notes via Gitea, sans avoir à instlaler Obsidian ou quoi que ce soit. Et l'automatisation fait que ce dépot est toujours synchronisé avec le dépot principal.
 
 ![image](/assets/images/obsidian200.png){: width="1000" height="1000"}
-*Une note consultable dans Gitea. Tous les liens sont clicables !*
+*Une note consultable dans Gitea. Tous les liens sont cliquables !*
 
 
 ## En conclusion
@@ -65,4 +65,4 @@ Cette démarche de publication de mes notes est particulièrement utile pour par
 
 Je n’ai en revanche pas encore trouvé de solution satisfaisante pour exporter le graphe et l’afficher dans Gitea. Le graphe reste donc, pour l’instant, un outil auquel moi seul ai accès. Mais qui sait, ce sera peut-être l’occasion d’un troisième article.
 
-\* J'avoue c'est ChatGPT en fait
+\* J'avoue c'est principalement ChatGPT en fait
