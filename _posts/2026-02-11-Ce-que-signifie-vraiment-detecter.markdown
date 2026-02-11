@@ -21,24 +21,25 @@ Prenons l’exemple de la sensibilité. Jusqu’ici, nous l’avons définie com
 On peut donc réécrire toutes nos métriques comme des probabilités conditionnelles, avec $M$ pour « malveillant » et $T^+$ ou $T^-$ pour désigner le résultat du test.
 
 On en déduit :
-- La sensibilité <=> $P(T^+ \mid M)$ <=> la probabilité qu’un événement soit testé positif sachant qu’il est malveillant.
-- La spécificité <=> $P(T^- \mid \neg M)$ <=> la probabilité qu’un événement soit testé négatif sachant qu’il n’est pas malveillant.
-- La précision <=> $P(M \mid T^+)$ <=> la probabilité qu’un événement soit malveillant sachant qu’il a été testé positif.
+- La sensibilité $\Leftrightarrow$ $$P(T^+ \mid M)$$ $\Leftrightarrow$ la probabilité qu’un événement soit testé positif sachant qu’il est malveillant.
+- La spécificité $\Leftrightarrow$ $$P(T^- \mid \neg M)$$ $\Leftrightarrow$ la probabilité qu’un événement soit testé négatif sachant qu’il n’est pas malveillant.
+- La précision $\Leftrightarrow$ $$P(M \mid T^+)$$ $\Leftrightarrow$ la probabilité qu’un événement soit malveillant sachant qu’il a été testé positif.
+
 
 
 # 2. La formule de Bayes
 
 L’outil de base pour calculer des probabilités conditionnelles, on l’apprend au lycée : c’est le théorème de Bayes.
 
-- $$P(A \mid B) = \frac{P(A) \times P(B \mid A)}{P(B)}$$
+$$P(A \mid B) = \frac{P(A) \times P(B \mid A)}{P(B)}$$
 
 Par exemple, si l’on applique cette formule pour calculer la précision, c’est-à-dire $$P(M \mid T^+)$$, on obtient :
 
-- $$P(M \mid T^+) = \frac{P(T^+ \mid M) \times P(M)}{P(T^+)}$$
+$$P(M \mid T^+) = \frac{P(T^+ \mid M) \times P(M)}{P(T^+)}$$
 
 Puis, pour montrer ce qu’il se passe lorsque l’on pousse la formule jusqu’au bout, on peut décomposer le dénominateur avec la loi des probabilités totales :
 
-- $$P(M \mid T^+) = \frac{P(T^+ \mid M) \times P(M)}{P(T^+ \mid M) \times P(M) + P(T^+ \mid \text{non } M) \times P(\text{non } M)}$$
+$$P(M \mid T^+) = \frac{P(T^+ \mid M) \times P(M)}{P(T^+ \mid M) \times P(M) + P(T^+ \mid \text{non } M) \times P(\text{non } M)}$$
 
 On peut maintenant observer l’équation et essayer d’interpréter chacun des termes. On voit :
 - $$P(M \mid T^+)$$ : la probabilité qu’un événement soit malveillant sachant qu’il a été testé positif, c’est-à-dire la précision.
@@ -48,15 +49,18 @@ On peut maintenant observer l’équation et essayer d’interpréter chacun des
 
 Et là, tout apparaît clairement. Quand on s’exprime en probabilités, on voit immédiatement que la précision dépend de la sensibilité, de la prévalence et de la spécificité. On retrouve en réalité la même formule que dans l’annexe de mon premier article, mais par un chemin beaucoup plus simple. On peut l’écrire proprement ainsi :
 
-- $$\text{précision} = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
+$$\text{précision} = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
 
-Pour rappel, on peut reprendre la matrice de confusion de l’article précédent et appliquer la formule pour retrouver à nouveau notre précision.
+Pour rappel, on peut reprendre la matrice de confusion de l’article précédent :
 
 
 |                               | Prédiction : malveillant | Prédiction : non malveillant |
 |-------------------------------|--------------------------|------------------------------|
 | **Réalité : malveillant**     | VP = 999                 | FN = 1                       |
 | **Réalité : non malveillant** | FP = 99 999              | VN = 99 899 001              |
+
+
+Et appliquer la formule pour retrouver à nouveau notre précision.
 
 $$
 \text{precision} = \frac{0{,}999 \times 0{,}00001}{0{,}999 \times 0{,}00001 + (1 - 0{,}999) \times (1 - 0{,}00001)}
@@ -89,17 +93,27 @@ Avant de passer à la partie suivante, il faut que je vous introduise la différ
 Une probabilité mesure la chance qu’un événement se produise, entre 0 et 1. Dans notre cas, par exemple, $$P(M)$$ vaut $$\frac{1}{100\,000}$$, car j’ai 99 999 événements non malveillants pour 1 événement malveillant. Cette idée de _99 999 contre 1_ s’appelle une _odds_. On peut l’écrire : $$\text{odds}(M) = \frac{1}{99\,999}$$ et la prononcer _1 contre 99 999_. C’est exactement le même concept que les cotes que l’on retrouve dans les paris sportifs.
 
 On a une formule à connaître pour passer d’une probabilité à une _odds_ :
-- $$\text{odds}(A) = \frac{P(A)}{1 - P(A)}$$
+$$\text{odds}(A) = \frac{P(A)}{1 - P(A)}$$
     
 
-Si on l’applique à notre problème :
-- $$\text{odds}(M) = \frac{P(M)}{1 - P(M)}$$
-- $$= \frac{\frac{1}{100\,000}}{1 - \left(\frac{1}{100\,000}\right)}$$
-- $$= \frac{1}{99\,999}$$ ; on retrouve bien le bon résultat.
+Si on l’applique à notre problème, on obtient :
+
+$$
+\text{odds}(M) = \frac{P(M)}{1 - P(M)}
+= \frac{\frac{1}{100\,000}}{1 - \left(\frac{1}{100\,000}\right)}
+= \frac{1}{99\,999}.
+$$
+
+On retrouve bien le bon résultat.
 
 Bien sûr, cela ne change rien : on parle toujours du même concept, 1 événement parmi 100 000. Mais maintenant, on a deux façons de l’écrire :
-- $$P(M) = \frac{1}{100\,000}$$ ; ou
-- $$\text{odds}(M) = \frac{1}{99\,999}$$
+
+$$
+P(M) = \frac{1}{100\,000}
+\quad \text{ou} \quad
+\text{odds}(M) = \frac{1}{99\,999}.
+$$
+
 
 Je ne vais pas entrer dans les détails des raisons pour lesquelles on voudrait parler en probabilités ou en _odds_ en général, mais sachez que ce sont deux représentations mathématiques différentes. Certains raisonnements sont plus intuitifs en probabilités, d’autres le sont davantage en _odds_. Et cela tombe bien : on connaît un très bon exemple de formule intéressante à convertir en _odds_ : le théorème de Bayes.
 
@@ -110,23 +124,26 @@ Je ne vais pas entrer dans les détails des raisons pour lesquelles on voudrait 
 
 On a vu dans la partie 2 que le théorème de Bayes nous permet d’arriver facilement à :
 
-- $$\text{précision} = P(M \mid T^+) = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
+$$\text{précision} = P(M \mid T^+) = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
 
 On a dit que ce n’était pas mal, car cette formule mettait bien en avant que la précision dépend de la prévalence, de la sensibilité et de la spécificité. Mais on peut en fait faire encore **beaucoup** mieux en raisonnant en _odds_. Je vous épargne la démonstration (disponible en annexe 1) et je vous donne tout de suite le résultat :
 
-- $$\text{précision (formulée comme une \_odds\_)} = \text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
+$$\text{précision (formulée comme une odds)} = \text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
 
 Autrement dit, les _odds_ qu’un événement soit malveillant sachant qu’il a déclenché une alerte, ce sont les _odds_ de la prévalence multipliées par $$\left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right)$$. Cette dernière valeur est en fait ce que les mathématiciens appellent le _likelihood ratio_, noté $$LR^+$$.
 
 On arrive donc à notre formulation finale du théorème de Bayes en version _odds_ :
 
-- $$\text{odds}(M \mid T^+) = \text{odds}(M) \times LR^+$$
+$$\text{odds}(M \mid T^+) = \text{odds}(M) \times LR^+$$
 
 En particulier, dans notre cas :
 
-- $$LR^+ = \frac{\text{sensibilité}}{1 - \text{spécificité}}$$    
-- $$\approx \frac{0{,}999}{0{,}001}$$
-- $$\approx 998$$
+$$
+LR^+ = \frac{\text{sensibilité}}{1 - \text{spécificité}}
+\approx \frac{0{,}999}{0{,}001}
+\approx 998.
+$$
+
 
 Si l’on reformule tout cela simplement en français : une alerte sur un événement multiplie ses _odds_ d’être malveillant par 998.
 
@@ -227,3 +244,5 @@ On sait que :
 
 $$P(T^+ \mid M)$$ c'est la sensibilité ; et  
 $$P(T^+ \mid \text{non } M)$$ c'est $$1 - \text{specificité}$$
+
+$$\text{précision (formulée comme une odds)} = \text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
