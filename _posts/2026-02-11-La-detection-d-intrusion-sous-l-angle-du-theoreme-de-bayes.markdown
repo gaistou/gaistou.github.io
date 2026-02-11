@@ -147,7 +147,7 @@ LR^+ = \frac{\text{sensibilité}}{1 - \text{spécificité}}
 $$
 
 
-Si l’on reformule tout cela simplement en français : dans notre situation, une alerte sur un événement multiplie ses _odds_ d’être malveillant par 998.
+Si l’on reformule tout cela simplement en français : **dans notre situation, une alerte sur un événement multiplie ses _odds_ d’être malveillant par 998.**
 
 
 ## 6. Ce que fait réellement un test de détection
