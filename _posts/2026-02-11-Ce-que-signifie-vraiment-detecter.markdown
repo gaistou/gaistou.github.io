@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ce qui signifie vraiment "détecter"
+title: La détection d'intrusion sous l'angle du théorème de Bayes
 tags: [cyber, detection]
 math: true
 ---
@@ -86,15 +86,17 @@ L'intérêt c'est surtout de voir les choses autrement. D'avoir un nouveau cadre
 - Troisièmement, on va pouvoir calculer des évolutions de probabilités et comprendre ce que ça veut réellement dire de *détecter* quelque chose.
 
 
-# 4. Introduction aux odds
+## 4. Introduction aux odds
 
 Avant de passer à la partie suivante, il faut que je vous introduise la différence entre les _odds_ et les probabilités.
 
 Une probabilité mesure la chance qu’un événement se produise, entre 0 et 1. Dans notre cas, par exemple, $$P(M)$$ vaut $$\frac{1}{100\,000}$$, car j’ai 99 999 événements non malveillants pour 1 événement malveillant. Cette idée de _99 999 contre 1_ s’appelle une _odds_. On peut l’écrire : $$\text{odds}(M) = \frac{1}{99\,999}$$ et la prononcer _1 contre 99 999_. C’est exactement le même concept que les cotes que l’on retrouve dans les paris sportifs.
 
 On a une formule à connaître pour passer d’une probabilité à une _odds_ :
-$$\text{odds}(A) = \frac{P(A)}{1 - P(A)}$$
-    
+
+$$
+\text{odds}(A) = \frac{P(A)}{1 - P(A)}
+$$
 
 Si on l’applique à notre problème, on obtient :
 
@@ -119,7 +121,7 @@ Je ne vais pas entrer dans les détails des raisons pour lesquelles on voudrait 
 
 
 
-# 5. Du théorème de Bayes au Likelihood ratio
+## 5. Du théorème de Bayes au Likelihood Ratio
 
 
 On a vu dans la partie 2 que le théorème de Bayes nous permet d’arriver facilement à :
@@ -148,7 +150,7 @@ $$
 Si l’on reformule tout cela simplement en français : une alerte sur un événement multiplie ses _odds_ d’être malveillant par 998.
 
 
-# 6. Ce que fait réellement un test de détection
+## 6. Ce que fait réellement un test de détection
 
 
 On va maintenant revenir à notre point de départ et réécrire le problème sous forme d’_odds_, armés de notre nouvelle formule.
@@ -165,7 +167,7 @@ Et là, ça y est : on a enfin une intuition correcte du problème de la détect
 
 
 
-# 7. Conclusion
+## 7. Conclusion
 
 Nous pouvons maintenant reformuler proprement le problème de la détection.
 
