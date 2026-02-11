@@ -130,7 +130,7 @@ $$\text{précision} = P(M \mid T^+) = \frac{\text{sensibilité} \times \text{pr�
 
 On a dit que ce n’était pas mal, car cette formule mettait bien en avant que la précision dépend de la prévalence, de la sensibilité et de la spécificité. Mais on peut en fait faire encore **beaucoup** mieux en raisonnant en _odds_. Je vous épargne la démonstration (disponible en annexe 1) et je vous donne tout de suite le résultat :
 
-$$\text{précision (formulée comme une odds)} = \text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
+$$\text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
 
 Autrement dit, les _odds_ qu’un événement soit malveillant sachant qu’il a déclenché une alerte, ce sont les _odds_ de la prévalence multipliées par $$\left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right)$$. Cette dernière valeur est en fait ce que les mathématiciens appellent le _likelihood ratio_, noté $$LR^+$$.
 
