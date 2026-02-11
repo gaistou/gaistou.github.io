@@ -47,7 +47,7 @@ On peut maintenant observer l’équation et essayer d’interpréter chacun des
 - $$P(M)$$ : la probabilité qu’un événement pris au hasard soit malveillant, c’est-à-dire la prévalence.
 - $$P(T^+ \mid \text{non } M)$$ : la probabilité qu’un événement déclenche une alerte sachant qu’il n’est pas malveillant, c’est-à-dire $$(1 - \text{spécificité})$$.
 
-Et là, tout apparaît clairement. Quand on s’exprime en probabilités, on voit immédiatement que la précision dépend de la sensibilité, de la prévalence et de la spécificité. On retrouve en en fait la même formule que dans l’annexe de mon premier article, mais par un chemin beaucoup plus simple. On peut l’écrire proprement ainsi :
+Et là, tout apparaît clairement. Quand on s’exprime en probabilités, on voit immédiatement que la précision dépend de la sensibilité, de la prévalence et de la spécificité. On retrouve en fait la même formule que dans l’annexe de mon premier article, mais par un chemin beaucoup plus simple. On peut l’écrire proprement ainsi :
 
 $$\text{précision} = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
 
@@ -178,6 +178,8 @@ Mais nous avons maintenant une intuition beaucoup plus saine de ce qu’est rée
 Je vous avoue qu’au moment où j’écris ces lignes, je ne sais pas si l’on finira par réellement trouver une méthode pour faire de la détection à faible prévalence. Mais j’ai deux pistes en tête qui semblent prometteuses et que nous explorerons dans les prochains articles :
 - Peut-on cumuler les tests de détection ? Pour quel gain ?
 - Serait-il possible de détecter la malveillance sans réellement détecter d’événement malveillant ?
+
+Affaire à suivre !
 
 
 ## Annexe 1
