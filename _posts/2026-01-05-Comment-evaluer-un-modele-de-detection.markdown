@@ -30,7 +30,7 @@ C'est parti.
 
 Commençons par nous donner un vocabulaire de base, pour s'assurer qu'on parle bien le même langage.
 
-Notre objectif est de réussir à détecter un **événement** particulier dans un **ensemble d'événement**. L'événement est particulier car il a une certaine **caractéristique** d'intérêt, par exemple, une session réseau **malveillante** dans un ensemble de sessions réseau **non malveillantes**. Pour ce faire on confronte cet événement à un **test de détection**, qu'on qualifie de **binaire** car il n'a que deux réponses possibles : oui l'événement présente cette caractéristique ou non l'événement ne présente pas cette caractéristique. La réponse d'un test de détection est appelé une **prédiction**.
+Notre objectif est de réussir à détecter un **événement** particulier dans un **ensemble d'événements**. L'événement est particulier car il a une certaine **caractéristique** d'intérêt, par exemple, une session réseau **malveillante** dans un ensemble de sessions réseau **non malveillantes**. Pour ce faire on confronte cet événement à un **test de détection**, qu'on qualifie de **binaire** car il n'a que deux réponses possibles : oui l'événement présente cette caractéristique ou non l'événement ne présente pas cette caractéristique. La réponse d'un test de détection est appelé une **prédiction**.
 
 Lorsqu'un test fait une prédiction, il y'a 4 situations possibles :
 - le test prédit que la session est malveillante et elle est effectivement malveillante ;
@@ -55,7 +55,7 @@ Il est crucial de bien distinguer ces quatre situations. Toute la suite des expl
 
 On cherche maintenant à savoir si notre test est *efficace*. Pour ce faire, on va évaluer le test sur un ensemble d’événements déjà qualifiés de manière certaine comme malveillant ou non malveillant, et comparer les prédictions à la vérité. On dit que cet ensemble est **labellisé**.
 
-Par exemple, considérons un grand jeu d'événements labellisé contenant :
+Par exemple, considérons un grand jeu d'événements labellisés contenant :
 - 1 000 sessions réellement malveillantes ;
 - 99 999 000 sessions réellement non malveillantes.
 
@@ -182,7 +182,7 @@ Mais nous ne rentrerons pas plus en détail dans la vision probabiliste pour l'i
 
 Dans la vraie vie, l'importance de chacune de ces métriques dépend selon la situation. La détection de fraude veut faire un minimum de faux-positifs pour ne pas sanctionner des innocents. La détection de missiles veut faire un minimum de faux-négatifs pour ne jamais rater une attaque. La détection de chips déformées dans une usine veut faire un maximum de vrais-positifs et jeter toutes les chips abîmées, quitte à jeter un tas de chips saines par erreur au passage. Un filtre antispam veut faire un maximum de vrais-négatifs et ne bloquer aucun mail légitime, quitte à laisser passer du spam.
 
-On peut modéliser ces préférence avec de nouvelles métriques qui combinent nos 4 métriques fondamentales, on peut alors obtenir : exactitude, F1-score, MCC, balanced accuracy, kappa, net benefit, expected utility, etc... Les possibilités sont presque infinies.
+On peut modéliser ces préférences avec de nouvelles métriques qui combinent nos 4 métriques fondamentales, on peut alors obtenir : exactitude, F1-score, MCC, balanced accuracy, kappa, net benefit, expected utility, etc... Les possibilités sont presque infinies.
 
 Dans notre cas on va s'intéresser uniquement au **F1-score**, qui est de loin le plus utilisé. L'idée du F1-score est de donner une importance égale à la sensibilité et la précision, et d'ignorer la spécificité. De plus, on veut fortement pénaliser les situations où l’une des deux valeurs est très faible. L’outil mathématique pour cela est la moyenne harmonique de la sensibilité et de la précision :
 - F1-score = (2 * précision * sensibilité) / (précision + sensibilité)
@@ -285,11 +285,3 @@ Conclusion :
 - à faible prévalence, la précision dépend fortement de Sp et très peu de Se.
 
 ```
-
-
-
-
-
-
-
-

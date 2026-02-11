@@ -123,7 +123,7 @@ En fait, je pense que plus que pour son apport pratique, le graphe est avant tou
 Maintenant que j'ai tous mes éléments, je me retrouve avec la boucle de travail suivante :
 - Je trouve un nouvel article intéressant.
 - Je crée une entrée sur Jabref.
-- Dans Obsidian, Ctrl + Shift + O pour créer une nouvelle note de lecture sur l'article. J'obtiens automatiquement un template à compléter.7
+- Dans Obsidian, Ctrl + Shift + O pour créer une nouvelle note de lecture sur l'article. J'obtiens automatiquement un template à compléter.
 - Dans la note de lecture, je liste les *concepts* utilisés dans le papier, et je complète le template.
 - Au fil de la lecture, j'enrichis mes notes *Concepts* chaque fois que j'apprends quelque chose de nouveau.
 - Lorsque j'ai un embryon d'idée nouvelle, je la note dans mon dossier *Vrac*.
