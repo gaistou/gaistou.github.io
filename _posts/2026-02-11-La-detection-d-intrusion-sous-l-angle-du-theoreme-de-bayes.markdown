@@ -247,4 +247,6 @@ On sait que :
 $$P(T^+ \mid M)$$ c'est la sensibilité ; et  
 $$P(T^+ \mid \text{non } M)$$ c'est $$1 - \text{specificité}$$
 
+On obtient donc :
+
 $$\text{précision (formulée comme une odds)} = \text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
