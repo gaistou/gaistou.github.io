@@ -13,7 +13,7 @@ Dans cet article, nous allons revoir le problème sous un autre angle. Nous verr
 Cet article est donc une transition théorique : nous avons déjà constaté les limites des tests de détection ; nous allons maintenant mieux les comprendre pour mieux les affronter dans les prochains articles.
 
 
-# 1. Les ratios sont des probabilités conditionnelles
+## 1. Les ratios sont des probabilités conditionnelles
 
 
 Prenons l’exemple de la sensibilité. Jusqu’ici, nous l’avons définie comme le nombre de tests positifs rapporté à l’ensemble des événements malveillants testés, c’est-à-dire la proportion d’événements malveillants effectivement détectés, ou plus formellement : $\frac{VP}{VP + FN}$. Mais on peut aussi dire que c’est la probabilité qu’un événement soit testé positif sachant qu’il est malveillant, que l’on note $P(T^+ \mid M)$. Les probabilités et les ratios sont toujours deux facettes d’une même pièce.
@@ -27,7 +27,7 @@ On en déduit :
 
 
 
-# 2. La formule de Bayes
+## 2. La formule de Bayes
 
 L’outil de base pour calculer des probabilités conditionnelles, on l’apprend au lycée : c’est le théorème de Bayes.
 
