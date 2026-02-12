@@ -40,7 +40,7 @@ Pas besoin de sortir les équations pour se convaincre que la prévalence compte
 - Si la prévalence est nulle (personne n'a le SIDA dans la population), alors tous les résultats positifs au test sont forcément faux. Tous les positifs sont des faux-positifs.
 - Si la prévalence est maximale (toute la population a le SIDA), alors le test ne peut faire aucun faux-positif, car tous les positifs sont forcément vrais. Tous les positifs sont des vrai-positifs.
 
-Oui ça peut faire bizarre, mais il n'y a pas d'arnaque. C'est l'éternel problème de l'aiguille dans la botte de foin, et plus il y'a de foin, plus il y'a de chances de faire des erreurs de détection. Pour une démonstration mathématique rigoureuse je vous redirige vers cet article très bien écrit : [todo]
+Oui ça peut faire bizarre, mais il n'y a pas d'arnaque. C'est l'éternel problème de l'aiguille dans la botte de foin, et plus il y'a de foin, plus il y'a de chances de faire des erreurs de détection. Pour une démonstration mathématique plus rigoureuse, je vous redirige vers mon autre article : [Comment évaluer un modèle de détection ?](https://gaistou.github.io/posts/Comment-evaluer-un-modele-de-detection/)
 
 Le paradoxe est nommé d'après la formule de Bayes, qui est au final la seule formule qui permette de penser rationnellement à tous les problèmes de tests de détection.
 
@@ -116,6 +116,4 @@ Aujourd’hui, les SOC sont structurellement condamnés à traiter majoritaireme
 
 Je ne dis pas ça pour le plaisir de détruire. J’aimerais que mon travail ait du sens. J’aimerais que la détection fonctionne. Mais il faut être lucide : notre manière actuelle de concevoir la détection est inefficace, naïve, et mathématiquement vouée à l’échec.
 
-Dans un prochain article, je vous proposerai une autre manière de penser le rôle du SOC. Un monde où l’objectif n’est plus de “détecter la malveillance” (tâche perdue d’avance, on vient de le voir) mais de cartographier, qualifier, et monitorer la normalité. Un monde où l’analyste ne chasse plus les loups, mais mesure la stabilité du troupeau.
-
-C’est peut-être moins sexy. Mais au moins, ça a une chance de marcher.
+Dans les prochains articles, je vous proposerai d'autres manières de comprendre et d'envisager le travail de détection, et j'espère que nous finirons par trouver une solution satisfaisante.
