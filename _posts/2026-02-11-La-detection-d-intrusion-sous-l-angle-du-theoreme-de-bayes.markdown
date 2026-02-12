@@ -128,11 +128,11 @@ On a vu dans la partie 2 que le théorème de Bayes nous permet d’arriver faci
 
 $$\text{précision} = P(M \mid T^+) = \frac{\text{sensibilité} \times \text{prévalence}}{\text{sensibilité} \times \text{prévalence} + (1 - \text{spécificité}) \times (1 - \text{prévalence})}$$
 
-On a dit que ce n’était pas mal, car cette formule mettait bien en avant que la précision dépend de la prévalence, de la sensibilité et de la spécificité. Mais on peut en fait faire encore **beaucoup** mieux en raisonnant en _odds_. Je vous épargne la démonstration (disponible en Annexe I) et je vous donne tout de suite le résultat :
+On a dit que c’était pas mal, car cette formule mettait bien en avant que la précision dépend de la prévalence, de la sensibilité et de la spécificité. Mais on peut en fait faire encore **beaucoup** mieux en raisonnant en _odds_. Je vous épargne la démonstration (disponible en Annexe I) et je vous donne tout de suite le résultat :
 
 $$\text{odds}(M \mid T^+) = \left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right) \times \text{odds}(M)$$
 
-Autrement dit, les _odds_ qu’un événement soit malveillant sachant qu’il a déclenché une alerte, c'est la prévalence (sous forme d'odds) multupliée par $$\left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right)$$. Cette dernière valeur est en fait ce que les mathématiciens appellent le _likelihood ratio_, noté $$LR^+$$.
+Autrement dit, les _odds_ qu’un événement soit malveillant sachant qu’il a déclenché une alerte, c'est la prévalence (sous forme d'odds) multipliée par $$\left(\frac{\text{sensibilité}}{1 - \text{spécificité}}\right)$$. Cette dernière valeur est en fait ce que les mathématiciens appellent le _likelihood ratio_, noté $$LR^+$$.
 
 On arrive donc à notre formulation finale du théorème de Bayes en version _odds_ :
 

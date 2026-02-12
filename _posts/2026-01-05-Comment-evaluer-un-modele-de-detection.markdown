@@ -235,9 +235,7 @@ On arrive à une conclusion inconfortable : il est aujourd’hui irréaliste d�
 
 Honnêtement ? Je ne sais pas vraiment. L'objectif de cet article était seulement d'avoir tous les outils pour prendre conscience du problème.
 
-Mais on continuera d'explorer la question dans les 2 prochains articles :
-- Repenser la détection avec la formule de Bayes.
-- Comment détecter une attaque dans détecter les attaques ?
+Mais on continuera d'explorer la question dans le prochain article : [La détection d'intrusion sous l'angle du théorème de Bayes](https://gaistou.github.io/posts/La-detection-d-intrusion-sous-l-angle-du-theoreme-de-bayes/)
 
 ## ANNEXE I
 
