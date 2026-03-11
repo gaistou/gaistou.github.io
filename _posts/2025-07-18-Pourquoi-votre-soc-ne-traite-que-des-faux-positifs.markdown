@@ -67,7 +67,7 @@ Alors, à quel point la formule de Bayes fait mal à ton SOC ? Prenons un exempl
 
 - On cherche à détecter un événement malveillant dans nos logs.
 - On ne peut pas le savoir à l'avance dans la vraie vie, mais supposons que 1 événement sur 1 million est malveillant dans nos données. 
-- Supposons qu'on a une règle de détection avec 99.99 % de sensibilité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000.
+- Supposons qu'on a une règle de détection avec 99.99 % de sensibilité et de spécificité, c’est-à-dire qu’elle détecte 99.99 % des vrais positifs, et fait un faux positif 1 fois sur 10 000.
 
 La règle de détection vient de sonner. Quelle est la probabilité que ce soit une vraie alerte ? Posé autrement : quelle est la probabilité qu’il y ait réellement une menace, sachant qu’il y a une alerte ?
 

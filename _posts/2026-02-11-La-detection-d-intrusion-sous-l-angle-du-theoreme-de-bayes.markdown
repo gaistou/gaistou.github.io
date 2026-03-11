@@ -161,7 +161,7 @@ On va maintenant revenir à notre point de départ et réécrire le problème so
 - Puis on passe chaque événement dans un test de détection avec 99,9 % de sensibilité et 99,9 % de spécificité, et on obtient $$\sim 100\,000$$ alertes. Si l’on y pioche une alerte au hasard, les _odds_ que l’alerte corresponde à un événement malveillant sont :  
   $$\text{odds}(M \mid T^+) = \text{odds}(M) \times LR^+ = \frac{1}{99\,999} \times 998 \approx \frac{1}{100}.$$
 
-Nos alertes remontent des événements qui ont 998 fois plus de chances d’être malveillants qu’un événement pris au hasard dans l’ensemble des données. **C’est ça la vérité mathématique de la détection : un test de détection remonte des événements qui ont “plus de chances d’être malveillants”.** Et dans notre cas, c’est 998 fois plus de chances. **Et donc, quand la prévalence est presque nulle, 998 fois presque rien, cela donne encore presque rien.**
+Nos alertes remontent des événements qui ont 998 fois plus de chances d’être malveillants qu’un événement pris au hasard dans l’ensemble des données. **C’est ça la vérité mathématique de la détection : un test de détection remonte des événements qui ont “plus de chances d’être malveillants”.** Et dans notre cas, c’est 998 fois plus de chances. **Et donc, quand la prévalence est presque nulle, 998 fois presque rien, ça donne encore presque rien.**
 
 Et là, ça y est : on a enfin une intuition ce qu'est réellement la détection. C'est fondamentalement une mise à jour de probabilités par une multiplication. La précision qui s’effondre face à une faible prévalence n’est plus une bizarrerie mathématique, c’est une évidence.
 
