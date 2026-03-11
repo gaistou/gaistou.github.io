@@ -112,7 +112,7 @@ Et ça c’est juste la réalité statistique, pas un bug de ton SIEM. Voilà co
 
 ## Conclusion
 
-Oui, c’est déprimant. Moi ça me déprime. Profondément.
+Oui, c’est déprimant.
 
 Aujourd’hui, les SOC sont structurellement condamnés à traiter majoritairement des faux positifs. Pas par incompétence. Pas par faute d’outils. Mais parce que la réalité statistique du monde numérique est contre nous.
 
