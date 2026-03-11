@@ -104,9 +104,11 @@ $$
 P(M \mid A) = \frac{0.0000009999}{0.0001009998} \approx 0.0099
 $$
 
-Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes (il y a probablement 0 événement malveillant sur votre système en réalité). Et ça c’est juste la réalité statistique, pas un bug de ton SIEM.
+Résultat : environ 0.99 %. Moins de 1 % de chances que l’alerte soit réelle. Et encore on est parti de suppositions très optimistes :
+- La prévalence de la malveillance dans vos données et certainement inférieure à 1 pour 1 million, elle est probablement nulle en fait ;
+- Vos tests de détection n'ont probablement pas 99.9% de sensibilité et de spécificité.
 
-Et voilà comment Bayes a tué ton SOC. Pas tes analystes. Pas tes outils. Juste les maths.
+Et ça c’est juste la réalité statistique, pas un bug de ton SIEM. Voilà comment Bayes tue ton SOC. Pas tes analystes. Pas tes outils. Juste les maths.
 
 ## Conclusion
 
