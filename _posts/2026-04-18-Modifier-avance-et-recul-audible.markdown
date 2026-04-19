@@ -13,6 +13,7 @@ TL;DR : voici un script Tampermonkey pour modifier le bouton de recul rapide du 
 // @name         Audible skip back 5s
 // @match        https://www.audible.fr/webplayer*
 // @run-at       document-idle
+// @grant        none
 // ==/UserScript==
 
 (function () {
@@ -20,27 +21,40 @@ TL;DR : voici un script Tampermonkey pour modifier le bouton de recul rapide du 
     return document.querySelector('audio, video');
   }
 
+  function rewind() {
+    const media = getMedia();
+    if (!media) return;
+
+    media.currentTime = Math.max(0, media.currentTime - 5);
+    console.log('[patch] rewind 5s');
+  }
+
   function isSkipBackButton(target) {
     return target && target.closest && target.closest('[data-testid="skip-back"]');
   }
 
+  // clic interception
   document.addEventListener('click', function (e) {
-    const button = isSkipBackButton(e.target);
-    if (!button) return;
-
-    const media = getMedia();
-    if (!media) {
-      console.log('Audible skip 5s: média introuvable');
-      return;
-    }
+    if (!isSkipBackButton(e.target)) return;
 
     e.preventDefault();
     e.stopPropagation();
     e.stopImmediatePropagation();
 
-    media.currentTime = Math.max(0, media.currentTime - 5);
-    console.log('Audible skip 5s:', media.currentTime);
+    rewind();
   }, true);
+
+  //keyboard arrow interception
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft') return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    rewind();
+  }, true);
+
 })();
 ```
 
@@ -173,13 +187,14 @@ Cependant, en passant par la console, cette modification ne dure que jusqu'au re
 
 Tampermonkey est une extension de navigateur, disponible sur le store Firefox, qui permet d’injecter du Javascript dans une page web au moment de son chargement.
 
-Voici notre script Tampermonkey final :
+Voici notre script Tampermonkey final (peaufiné avec le support de la flèche de gauche aussi) :
 
 ```javascript
 // ==UserScript==
 // @name         Audible skip back 5s
 // @match        https://www.audible.fr/webplayer*
 // @run-at       document-idle
+// @grant        none
 // ==/UserScript==
 
 (function () {
@@ -187,27 +202,40 @@ Voici notre script Tampermonkey final :
     return document.querySelector('audio, video');
   }
 
+  function rewind() {
+    const media = getMedia();
+    if (!media) return;
+
+    media.currentTime = Math.max(0, media.currentTime - 5);
+    console.log('[patch] rewind 5s');
+  }
+
   function isSkipBackButton(target) {
     return target && target.closest && target.closest('[data-testid="skip-back"]');
   }
 
+  // clic interception
   document.addEventListener('click', function (e) {
-    const button = isSkipBackButton(e.target);
-    if (!button) return;
-
-    const media = getMedia();
-    if (!media) {
-      console.log('Audible skip 5s: média introuvable');
-      return;
-    }
+    if (!isSkipBackButton(e.target)) return;
 
     e.preventDefault();
     e.stopPropagation();
     e.stopImmediatePropagation();
 
-    media.currentTime = Math.max(0, media.currentTime - 5);
-    console.log('Audible skip 5s:', media.currentTime);
+    rewind();
   }, true);
+
+  //keyboard arrow interception
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft') return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    rewind();
+  }, true);
+
 })();
 ```
 
