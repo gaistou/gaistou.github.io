@@ -64,11 +64,11 @@ Je pourrais vous emmener directement à la solution qui marche (celle du TL;DR).
 
 Avec un tout petit peu d’expérience en développement web, on se doute que c’est une fonction en Javascript qui applique le recul rapide lorsqu’on clique sur le bouton. Mon premier réflexe est donc d’inspecter le bouton (Ctrl + Shift + C) et de repérer la fonction Javascript associée.
 
-![](audible1.png){: width="1000" height="1000"}
+![](/assets/images/audible1.png){: width="1000" height="1000"}
 
 On retrouve bien notre bouton “skip-back”, qui est associé à un *event listener* en Javascript. On peut cliquer sur le petit bouton “event” pour obtenir le détail de ce listener.
 
-![](audible2.png){: width="1000" height="1000"}
+![](/assets/images/audible2.png){: width="1000" height="1000"}
 
 L’event listener détecte un clic de souris et appelle la fonction `Jc()` qui… ne fait rien ?
 
@@ -79,7 +79,7 @@ On comprend que ce listener ne sert en fait à rien. C’est juste un artefact d
 
 Pour avoir plus d’informations sur le bouton, on peut afficher sa représentation dans le DOM. Pour ce faire, on le sélectionne dans l’onglet “Inspecteur”, puis dans l’onglet “Console”, on tape : `$0`.
 
-![](audible3.png){: width="1000" height="1000"}
+![](/assets/images/audible3.png){: width="1000" height="1000"}
 
 On retrouve bien la propriété *onclick* associée à la fonction `Jc()` qui ne sert à rien. Mais plus intéressant : on voit les propriétés `__reactProps$z9p4912tsd` et `__reactFiber$z9p4912tsd`, qui indiquent que l’application est faite avec le framework React.
 
@@ -90,7 +90,7 @@ En lisant la documentation de React (enfin, en laissant ChatGPT la lire pour nou
 
 On déplie maintenant la propriété reactProps de notre bouton. On y retrouve effectivement une fonction `h()`. On peut afficher son contenu avec : `$0.__reactProps$z9p4912tsd.onClick.toString()`.
 
-![](audible4.png){: width="1000" height="1000"}
+![](/assets/images/audible4.png){: width="1000" height="1000"}
 
 On voit alors le code de la fonction `h()` réellement appelée lorsque l’on clique sur le bouton : `()=>{n(xo(-30))}`.
 
@@ -103,7 +103,7 @@ On veut maintenant modifier la valeur -30 pour quelque chose qui nous convient m
 
 On va dans l’onglet “Débogueur”, puis dans “Rechercher” à gauche, et on entre le code suivant : `()=>{n(xo(-30))}`.
 
-![](audible5.png){: width="1000" height="1000"}
+![](/assets/images/audible5.png){: width="1000" height="1000"}
 
 Le bout de code est dans le fichier `images/S/cCRQ4krLAjl4kpL.js`
 
@@ -213,4 +213,4 @@ Voici notre script Tampermonkey final :
 
 Et voila, mission accomplie !
 
-![](audible6.png){: width="1000" height="1000"}
+![](/assets/images/audible6.png){: width="1000" height="1000"}
