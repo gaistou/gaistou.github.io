@@ -213,4 +213,4 @@ Voici notre script Tampermonkey final :
 
 Et voila, mission accomplie !
 
-![](/assets/images/audible6.png){: width="1000" height="1000"}
+![](assets/images/audible6.png)
