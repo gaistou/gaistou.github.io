@@ -175,7 +175,7 @@ document.addEventListener('click', (e) => {
 Le code surveille chaque clic sur la page (pour s'appliquer avant la fonction `h()`) :
 - on vérifie que le clic est sur le bouton skip-back ; 
 - on récupère l'objet qui contrôle la lecture audio ;
-- il bloque la propagation de l'événement pour pas que React lance sa fonction `h()` ;
+- on bloque la propagation de l'événement pour pas que React lance sa fonction `h()` ;
 - puis on applique notre propre code : retourner 5 secondes en arrière dans le lecteur audio.
 
 On peut copier-coller le bout de code dans la console, et ça marche ! Le bouton revient bien 5 secondes en arrière au lieu de 30.
