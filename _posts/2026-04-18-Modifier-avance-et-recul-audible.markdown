@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Modifier le bouton d'avance rapide sur Audible
-tags: [divers, web]
+title: Modifier le bouton d'avance rapide sur Audible et initiation au reverse de Javascript
+tags: [divers, web, reverse]
 math: true
 ---
 
