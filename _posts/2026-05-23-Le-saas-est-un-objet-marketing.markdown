@@ -37,7 +37,7 @@ Aucun de ces critères n'est technique. Ce sont uniquement des critères marketi
 
 ## Le SaaS est un objet marketing
 
-Après plusieurs heures à essayer de rationnaliser techniquement ce qu'on veut bien dire par SaaS, j'arrive à la conclusion qu'il ne faut pas le rationnaliser techniquement. Même les critères du NIST peuvent être jeter par la fenêtre, Office 365 on appelle ça un SaaS alors que ça se base sur des clients lourds. Mais d'un point de vue marketing, c'est bien un SaaS. 
+Après plusieurs heures à essayer de rationnaliser techniquement ce qu'on veut bien dire par SaaS, j'arrive à la conclusion qu'il ne faut pas le rationnaliser techniquement. Même les critères du NIST peuvent être jetés par la fenêtre, Office 365 on appelle ça un SaaS alors que ça se base sur des clients lourds. Mais d'un point de vue marketing, c'est bien un SaaS. 
 
 Ce qui a fini de me convaincre c'est le subreddit [r/SaaS](https://www.reddit.com/r/SaaS/). Ce n'est pas un subreddit d'ingénieurs qui débattent d'architecture distribuée. C'est un subreddit d'entrepreneurs et de commerciaux. Les discussions portent sur le pricing, sur la rentabilité, sur comment trouver ses premiers clients.
 
