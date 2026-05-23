@@ -32,12 +32,12 @@ Si on observe comment le mot est utilisé dans la pratique, on retrouve souvent 
 - Remplacement d'un client lourd : Overleaf est un SaaS qui remplace TexMaker.
 - Le service est le produit : sur Airbnb, le produit, c'est le logement. Le site n'est qu'un intermédiaire. Sur Salesforce, le logiciel c'est le produit.
 
-Aucun de ces critères n'est technique. Ce sont uniquement des critères marketing. Et tous ces critères sont arbitraires, aucune norme technique ne les a imposés.
+Aucun de ces critères n'est technique. Ce sont uniquement des critères marketing. Et tous ces critères sont approximatifs, on peut faire sa propre tambouille pour argumenter que n'importe quel service en ligne est un SaaS ou n'en est pas un.
 
 
 ## Le SaaS est un objet marketing
 
-Après plusieurs heures à essayer de rationnaliser ce qu'on veut bien dire par SaaS, j'arrive à la conclusion qu'il ne faut pas le rationnaliser techniquement. Ce n'est pas un objet technique. C'est une catégorie commerciale.
+Après plusieurs heures à essayer de rationnaliser techniquement ce qu'on veut bien dire par SaaS, j'arrive à la conclusion qu'il ne faut pas le rationnaliser techniquement. Même les critères du NIST peuvent être jeter par la fenêtre, Office 365 on appelle ça un SaaS alors que ça se base sur des clients lourds. Mais d'un point de vue marketing, c'est bien un SaaS. 
 
 Ce qui a fini de me convaincre c'est le subreddit [r/SaaS](https://www.reddit.com/r/SaaS/). Ce n'est pas un subreddit d'ingénieurs qui débattent d'architecture distribuée. C'est un subreddit d'entrepreneurs et de commerciaux. Les discussions portent sur le pricing, sur la rentabilité, sur comment trouver ses premiers clients.
 
