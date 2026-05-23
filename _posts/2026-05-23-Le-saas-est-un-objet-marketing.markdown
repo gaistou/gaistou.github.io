@@ -9,7 +9,7 @@ tags: [cloud]
 
 Le NIST (National Institute of Standards and Technology) définit le SaaS comme suit :
 
-> *"The capability provided to the consumer is to use the provider's applications running on ... "*
+> *"The capability provided to the consumer is to use the provider's applications running on ... blablabla"*
 
 Je vous épargne la formule pompeuse, dans un langage clair ça donne les critères suivants :
 
