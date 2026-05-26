@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Le SaaS est un objet marketing
-categories: [Cloud]
 tags: [cloud]
 ---
 

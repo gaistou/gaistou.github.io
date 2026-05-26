@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "C'est quoi réellement le cloud ?"
-date: 2026-05-26 10:00:00 +0200
-categories: [Cloud]
 tags: [cloud]
 ---
 
