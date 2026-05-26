@@ -4,15 +4,15 @@ title: "C'est quoi réellement le cloud ?"
 tags: [cloud]
 ---
 
-Le mot *Cloud* est champion dans sa catégorie de "mot qu'on utilise à tout va sans vraiment savoir ce que ça signifie". La définition *naïve*, la première qu'on apprend c'est : *un serveur qui est pas chez moi".
+Le mot *Cloud* est champion dans sa catégorie de "mot qu'on utilise à tout va sans vraiment savoir ce que ça signifie". La définition *naïve*, la première qu'on apprend c'est : *un serveur qui n'est pas chez moi*.
 
 Mais cette définition est beaucoup trop large, elle inclue en fait tous les serveurs de la planète. Et pourtant elle est aussi trop restrictive, puisque ça exclue tous les SaaS, qui ne sont pas des serveurs, mais des services, et qui sont pourtant considérés comme des *technologies cloud*.
 
-Puis on y réfléchit et on se rend compte que l'usage du mot *cloud* est bizarre. Des fois c'est un nom : *dans le cloud* qui a l'air de définir un truc physique, des fois c'est un adjectif *un service cloud*, un *serveur cloud*, une *architecture cloud*. Et dans les deux cas c'est pas clair, *le cloud* on voit pas vraiment l'objet ou le concept que ça désigne, et l'adjectif on sait pas trop ce qu'il qualifie.
+Puis on y réfléchit et on se rend compte que l'usage du mot *cloud* est bizarre. Des fois c'est un nom : *dans le cloud* qui a l'air de définir un truc physique, des fois c'est un adjectif *un service cloud*, un *serveur cloud*, une *architecture cloud*. Et dans les deux cas c'est pas clair, *le cloud* on voit pas vraiment l'objet ou le concept que ça désigne, et l'adjectif *cloud* on sait pas trop ce qu'il qualifie.
 
-A force, on finit par être agacé à chaque utilisation du mot cloud. Les conversations sont pas claires, demandent des efforts d'interprétation et d'adaptation à ce qu'entend l'interlocuteur par *cloud*, ça crée des quiproquos, et à la fin on sait pas vraiment ce qu'on vient d'acheter.
+A force, on finit par être agacé à chaque utilisation du mot cloud. Les conversations sont pas claires, demandent des efforts d'interprétation et d'adaptation à ce qu'entend l'interlocuteur par *cloud*, ça crée des quiproquos, et à la fin on sait plus vraiment ce qu'on vient d'acheter.
 
-C'est malheureusement l'usage du mot *cloud* au quotidien, et ça on ne pourra plus rien y faire. Mais je me demande quelle est la *bonne* utilisation du mot cloud.
+C'est malheureusement l'usage du mot *cloud* au quotidien, et ça on ne pourra plus rien y faire. Mais dans un effort d'intégrité intellectuelle, je vous propose d'essayer de redonner une définition claire au mot *cloud*.
 
 
 ## Un peu de rigueur ontologique
