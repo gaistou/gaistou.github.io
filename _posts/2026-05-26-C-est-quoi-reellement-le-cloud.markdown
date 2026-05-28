@@ -23,7 +23,7 @@ Commençons par la définition de référence, celle du NIST.
 
 La première chose à remarquer, c'est que le cloud c'est un **modèle de prestation de mise à disposition de ressources informatiques**. Ce n'est pas une technologie, un produit, ou un lieu physique. C'est une façon de qualifier une relation commerciale entre un fournisseur et un consommateur.
 
-Un logiciel ne peut pas être *cloud*. Un serveur ne peut pas être *cloud*. Un réseau ne peut pas être *cloud*. Rien n'est situé *le cloud*. On ne fait pas de sécurité *du cloud*. Ce ne sont pas les bonnes catégories ontologiques. Ce qui est *cloud*, c'est la **prestation** qui vous donne accès à ces ressources.
+Un logiciel ne peut pas être *cloud*. Un serveur ne peut pas être *cloud*. Un réseau ne peut pas être *cloud*. Rien n'est situé dans *le cloud*. On ne fait pas de sécurité *du cloud*. Ce ne sont pas les bonnes catégories ontologiques. Ce qui est *cloud*, c'est la **prestation** qui vous donne accès à ces ressources.
 
 Dit autrement : « AWS S3 c'est du cloud » est un raccourci pour « la prestation par laquelle AWS vous fournit du stockage satisfait les critères d'une prestation cloud ». Le service de stockage lui-même n'est ni cloud ni non-cloud, c'est juste du stockage. Le moyen technique par lequel AWS rend possible cette prestation **n'est pas un critère**.
 
