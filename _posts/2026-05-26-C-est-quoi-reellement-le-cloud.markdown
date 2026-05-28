@@ -38,7 +38,7 @@ Revenons à l'essentiel : qu'est-ce qu'un fournisseur cloud peut vous livrer ?
 
 **Des logiciels** servis sur un réseau, que vous utilisez sans vous préoccuper de l'infrastructure sous-jacente. C'est le **SaaS** (*Software as a Service*). J'en parle plus en détail dans [cet article](https://gaistou.github.io/posts/Le-saas-est-un-objet-marketing/).
 
-La distinction fondamentale entre les deux, c'est la **responsabilité** : avec l'IaaS, le fournisseur vous livre une machine vide — ce qui tourne dessus est votre affaire. Avec le SaaS, le fournisseur garde la responsabilité du logiciel, vous n'accédez qu'à sa surface.
+La distinction fondamentale entre les deux, c'est la **responsabilité** : avec l'IaaS, le fournisseur vous livre une machine vide, et ce qui tourne dessus est votre affaire. Avec le SaaS, le fournisseur garde la responsabilité du logiciel, vous n'accédez qu'à sa surface.
 
 Ces deux catégories sont exhaustives parce que l'informatique, ce n'est rien d'autre que du matériel et des logiciels qui tournent dessus. Un fournisseur cloud ne peut vous livrer que l'un ou l'autre, ou les deux, à des niveaux d'abstraction différents.
 
