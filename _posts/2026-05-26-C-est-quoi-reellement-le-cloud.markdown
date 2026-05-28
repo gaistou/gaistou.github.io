@@ -68,4 +68,4 @@ Le cloud, c'est une prestation de livraison de ressources informatiques. Ces res
 
 Avoir une définition précise du cloud, ce n'est pas juste de l'hygiène intellectuelle, ça permet de se poser les bonnes questions.
 
-*"Passer au cloud"* n'est pas une décision technique, c'est une décision sur la **responsabilité**. C'est le choix de déporter une partie de sa responsabilité à un tiers via une prestation commerciale. La scalabilité, la redondance, la facturation à l'usage ... ce ne sont en fait que les conditions naturelles qui rendent possible ce genre de prestation, ce ne sont pas des finalités.
+*"Passer au cloud"* n'est pas une décision technique, c'est une décision sur la responsabilité. C'est le choix de déporter une partie de sa responsabilité à un tiers via une prestation commerciale.
